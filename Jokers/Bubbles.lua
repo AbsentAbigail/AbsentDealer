@@ -1,4 +1,4 @@
-    SMODS.Joker {
+SMODS.Joker {
     key = 'bubbles',
     loc_txt = {
         name = 'Bubbles the Bear',
@@ -35,15 +35,9 @@
 				colour = G.C.CHIPS
             }
         end
-        print("1")
         if not context.blueprint and context.before then
-            print("2")
             for _, scoring_card in pairs(context.scoring_hand) do
-                print("3")
-                print(scoring_card:is_suit("Hearts"))
-                print(scoring_card.base.suit)
                 if scoring_card:is_suit("Hearts", nil, nil) then
-                    print("4")
                     card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chip_mod
                     return {
                         message = localize('k_upgrade_ex'),
