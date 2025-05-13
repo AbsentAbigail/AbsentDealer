@@ -34,3 +34,11 @@ AUtils.Joker("HideAndSeek")
 AUtils.Joker("Bubbles")
 AUtils.Joker("GlowingShard")
 AUtils.Joker("Djungelskog")
+AUtils.Joker("Catcus")
+AUtils.Joker("LilGuy")
+AUtils.Joker("Aftonsparv")
+AUtils.Joker("Friendship")
+AUtils.Joker("Blackfisk")
+
+-- Legendaries
+AUtils.Joker("Sherba")
