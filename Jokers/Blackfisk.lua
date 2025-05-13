@@ -12,6 +12,7 @@ SMODS.Joker {
     pos = {x = 4, y = 1},
     blueprint_compat = true,
     rarity = 2,
+    cost = 6,
     config = {
         extra = {
             hand_size = 1,

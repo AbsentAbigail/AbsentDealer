@@ -11,6 +11,7 @@ SMODS.Joker {
     pos = {x = 9, y = 0},
     blueprint_compat = true,
     rarity = 2,
+    cost = 4,
     config = {
         extra = {
             retriggers = 2

@@ -13,6 +13,7 @@ SMODS.Joker {
     pos = {x = 3, y = 0},
     blueprint_compat = false,
     rarity = 1,
+    cost = 3,
     config = {
         extra = {
             convertFirstToRank = "Queen",

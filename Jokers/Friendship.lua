@@ -3,9 +3,8 @@ SMODS.Joker {
     loc_txt = {
         name = 'Friendship',
         text = {
-            "This joker gains {C:mult}+#1#{} Mult,",
-            "if played hand contains scoring",
-            "cards of {C:attention}2+{} unique suits",
+            "This joker gains {C:mult}+#1#{} Mult, if scoring",
+            "hand contains {C:attention}2+{} unique suits",
             "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
         }
     },
@@ -13,6 +12,7 @@ SMODS.Joker {
     pos = {x = 3, y = 1},
     blueprint_compat = true,
     rarity = 1,
+    cost = 5,
     config = {
         extra = {
             mult_mod = 1,

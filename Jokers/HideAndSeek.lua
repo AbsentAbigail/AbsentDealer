@@ -13,6 +13,7 @@ SMODS.Joker {
     pos = {x = 4, y = 0},
     blueprint_compat = true,
     rarity = 2,
+    cost = 5,
     config = {
         extra = {
             odds = 4,
