@@ -26,20 +26,25 @@ SMODS.Atlas {
 
 SMODS.load_file("Utils.lua")()
 
-AUtils.Joker("Blahaj")
-AUtils.Joker("Catcitten")
-AUtils.Joker("Seal")
+-- Common Jokers
 AUtils.Joker("CrowningCeremony")
-AUtils.Joker("HideAndSeek")
 AUtils.Joker("Bubbles")
-AUtils.Joker("GlowingShard")
 AUtils.Joker("Djungelskog")
-AUtils.Joker("Catcus")
-AUtils.Joker("LilGuy")
 AUtils.Joker("Aftonsparv")
 AUtils.Joker("Friendship")
+
+-- Uncommon Jokers
+AUtils.Joker("Blahaj")
+AUtils.Joker("HideAndSeek")
+AUtils.Joker("GlowingShard")
+AUtils.Joker("Catcus")
+AUtils.Joker("LilGuy")
 AUtils.Joker("Blackfisk")
 AUtils.Joker("ChainedJoker")
 
--- Legendaries
+-- Rare Jokers
+AUtils.Joker("Catcitten")
+AUtils.Joker("Seal")
+
+-- Legendary Jokers
 AUtils.Joker("Sherba")
