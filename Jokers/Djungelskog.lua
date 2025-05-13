@@ -13,7 +13,7 @@ SMODS.Joker {
     rarity = 2,
     config = {
         extra = {
-            chip_bonus = 1
+            chip_bonus = 2
         }
     },
     loc_vars = function(self, info_queue, center)
