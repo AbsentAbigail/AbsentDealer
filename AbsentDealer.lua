@@ -39,6 +39,7 @@ AUtils.Joker("LilGuy")
 AUtils.Joker("Aftonsparv")
 AUtils.Joker("Friendship")
 AUtils.Joker("Blackfisk")
+AUtils.Joker("ChainedJoker")
 
 -- Legendaries
 AUtils.Joker("Sherba")
