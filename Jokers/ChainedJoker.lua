@@ -3,7 +3,7 @@ SMODS.Joker {
     loc_txt = {
         name = 'Chained Joker',
         text = {
-            "{X:mult,C:white}X#1#",
+            "{X:mult,C:white}X#1# Mult",
             "{C:inactive}(Always eternal)"
         }
     },
