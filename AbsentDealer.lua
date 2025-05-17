@@ -1,13 +1,3 @@
---- STEAMODDED HEADER
---- MOD_NAME: Absent Dealer
---- MOD_ID: AbsentDealer
---- PREFIX: ad
---- MOD_AUTHOR: [Absent Abigail]
---- MOD_DESCRIPTION: Cute plush jokers
---- LOADER_VERSION_GEQ: 1.0.0
---- VERSION: 1.0.0
---- BADGE_COLOR: FC03DF
-
 SMODS.Atlas({
     key = "modicon",
     path = "modicon.png",
@@ -23,9 +13,6 @@ SMODS.Atlas {
 }
 
 SMODS.load_file("Utils.lua")()
-
--- Debug
-AUtils.Joker("Debuff")
 
 -- Common Jokers
 AUtils.Joker("CrowningCeremony")
@@ -56,6 +43,11 @@ AUtils.Joker("Cuddles")
 
 -- Legendary Jokers
 AUtils.Joker("Sherba")
+
+if SMODS.current_mod.config.debug_jokers then
+    -- Debug
+    AUtils.Joker("Debuff")
+end
 
 -- Round based random effects
 
