@@ -57,6 +57,19 @@ AUtils.Joker("Cuddles")
 -- Legendary Jokers
 AUtils.Joker("Sherba")
 
+-- Round based random effects
+
+local igo = Game.init_game_object
+function Game:init_game_object()
+	local ret = igo(self)
+	init_seal_hand(ret)
+	init_glowing_shard_hand(ret)
+	init_imagination_hand(ret)
+	return ret
+end
+
 function SMODS.current_mod.reset_game_globals(run_start)
-	SealChangeHand()
+	reset_seal_hand()
+    reset_glowing_shard_rank()
+    reset_imagination_rank()
 end

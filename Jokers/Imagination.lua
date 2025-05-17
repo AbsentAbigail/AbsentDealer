@@ -22,7 +22,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
-                localize(G.GAME.current_round.mail_card.rank, "ranks"),
+                localize(G.GAME.current_round.imagination_card.rank, "ranks"),
                 G.GAME and G.GAME.probabilities.normal or 1,
                 center.ability.extra.odds
             }
@@ -34,7 +34,7 @@ SMODS.Joker {
         end
         if context.individual and context.cardarea == G.play then
             local scoring_card = context.other_card
-            if scoring_card:get_id() ~= G.GAME.current_round.mail_card.id then
+            if scoring_card:get_id() ~= G.GAME.current_round.imagination_card.id then
                 return
             end
 
@@ -59,3 +59,22 @@ SMODS.Joker {
         end
     end
 }
+
+function init_imagination_hand(ret)
+    ret.current_round.imagination_card = { rank = 'Ace' }
+end
+
+function reset_imagination_rank()
+    G.GAME.current_round.imagination_card = { rank = 'Ace' }
+    local valid_mail_cards = {}
+    for _, playing_card in ipairs(G.playing_cards) do
+        if not SMODS.has_no_rank(playing_card) then
+            valid_mail_cards[#valid_mail_cards + 1] = playing_card
+        end
+    end
+    local mail_card = pseudorandom_element(valid_mail_cards, pseudoseed('vremade_mail' .. G.GAME.round_resets.ante))
+    if mail_card then
+        G.GAME.current_round.imagination_card.rank = mail_card.base.value
+        G.GAME.current_round.imagination_card.id = mail_card.base.id
+    end
+end

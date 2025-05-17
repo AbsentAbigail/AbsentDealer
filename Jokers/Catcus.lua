@@ -1,3 +1,5 @@
+local rank = 14
+
 SMODS.Joker {
     key = 'catcus',
     loc_txt = {
@@ -21,7 +23,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
-                localize("Ace", "ranks"),
+                AUtils.localize_rank_from_id(rank),
                 center.ability.extra.money,
                 center.ability.extra.x_mult
             }
@@ -29,7 +31,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play then
-            if context.other_card:get_id() == 14 then
+            if context.other_card:get_id() == rank then
                 return {
                     xmult = card.ability.extra.x_mult,
                     dollars = card.ability.extra.money

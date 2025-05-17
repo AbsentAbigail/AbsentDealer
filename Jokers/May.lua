@@ -1,3 +1,5 @@
+local rank = 5
+
 SMODS.Joker {
     key = 'may',
     loc_txt = {
@@ -14,7 +16,6 @@ SMODS.Joker {
     cost = 3,
     config = {
         extra = {
-            rank = 5,
             chips = 5,
             mult = 5,
         }
@@ -22,7 +23,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
-                AUtils.localize_rank_from_id(center.ability.extra.rank),
+                AUtils.localize_rank_from_id(rank),
                 center.ability.extra.chips,
                 center.ability.extra.mult
             }
@@ -30,7 +31,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.hand and not context.end_of_round then
-            if context.other_card:get_id() == card.ability.extra.rank then
+            if context.other_card:get_id() == rank then
                 local debuffed = AUtils.debuffed(context.other_card, card)
                 return debuffed or {
                     chips = card.ability.extra.chips,

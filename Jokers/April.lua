@@ -1,3 +1,4 @@
+local rank = 4
 SMODS.Joker {
     key = 'april',
     loc_txt = {
@@ -14,14 +15,13 @@ SMODS.Joker {
     cost = 8,
     config = {
         extra = {
-            rank = 4,
             money = 4
         }
     },
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
-                AUtils.localize_rank_from_id(center.ability.extra.rank),
+                AUtils.localize_rank_from_id(rank),
                 center.ability.extra.money
             }
         }
@@ -30,7 +30,7 @@ SMODS.Joker {
         if context.before and context.cardarea == G.jokers then
             for _, scoring_card in ipairs(context.scoring_hand) do
                 local debuffed = AUtils.debuffed(scoring_card, card)
-                if scoring_card:get_id() == card.ability.extra.rank and not debuffed then
+                if scoring_card:get_id() == rank and not debuffed then
                     return {
                         dollars = card.ability.extra.money
                     }

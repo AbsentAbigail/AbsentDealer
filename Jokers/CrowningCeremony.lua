@@ -1,3 +1,7 @@
+local convertFirstToRank = 12
+local convertSecondToRank = 2
+
+
 SMODS.Joker {
     key = 'crowningceremony',
     loc_txt = {
@@ -16,16 +20,14 @@ SMODS.Joker {
     cost = 3,
     config = {
         extra = {
-            convertFirstToRank = "Queen",
-            convertSecondToRank = "2",
             poker_hand = "Pair"
         }
     },
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
-                localize(center.ability.extra.convertFirstToRank, "ranks"),
-                localize(center.ability.extra.convertSecondToRank, "ranks"),
+                AUtils.localize_rank_from_id(convertFirstToRank),
+                AUtils.localize_rank_from_id(convertSecondToRank),
                 localize(center.ability.extra.poker_hand, 'poker_hands')
             }
         }
@@ -44,9 +46,9 @@ SMODS.Joker {
             local first_scoring_card = context.scoring_hand[1] or {}
             local second_Scoring_card = context.scoring_hand[2] or {}
 
-            local first_diff = 12 - (first_scoring_card.base.id or 0)
+            local first_diff = convertFirstToRank - (first_scoring_card.base.id or 0)
             SMODS.modify_rank(first_scoring_card, first_diff)
-            local second_diff = 2 - (second_Scoring_card.base.id or 0)
+            local second_diff = convertSecondToRank - (second_Scoring_card.base.id or 0)
             SMODS.modify_rank(second_Scoring_card, second_diff)
 
             return {

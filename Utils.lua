@@ -11,7 +11,7 @@ function AUtils.localize_rank_from_id(id)
         [11] = "Jack",
         [12] = "Queen",
         [13] = "King",
-        [1] = "Ace"
+        [14] = "Ace"
     }
     return localize(ranks[id] or tostring(id), "ranks")
 end

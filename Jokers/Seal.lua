@@ -51,15 +51,12 @@ SMODS.Joker {
     end
 }
 
-local igo = Game.init_game_object
-function Game:init_game_object()
-	local ret = igo(self)
+function init_seal_hand(ret)
 	ret.current_round.ajseal_card = { poker_hand = 'High Card' }
-	return ret
 end
 
 -- Change required Poker Hand every round
-function SealChangeHand()
+function reset_seal_hand()
 	local newHand = G.GAME.current_round.ajseal_card.poker_hand or ''
     local _poker_hands = {}
     for k, v in pairs(G.GAME.hands) do

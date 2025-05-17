@@ -1,3 +1,5 @@
+local rank = 9
+
 SMODS.Joker {
     key = 'sam',
     loc_txt = {
@@ -14,7 +16,6 @@ SMODS.Joker {
     cost = 8,
     config = {
         extra = {
-            rank = 9,
             x_chips = 2
         }
     },
@@ -22,7 +23,7 @@ SMODS.Joker {
         return {
             vars = {
                 center.ability.extra.x_chips,
-                AUtils.localize_rank_from_id(center.ability.extra.rank)
+                AUtils.localize_rank_from_id(rank),
             }
         }
     end,
@@ -30,7 +31,7 @@ SMODS.Joker {
         if context.joker_main and next(context.poker_hands["Flush"]) then
             local rank_check = false
             for i = 1, #context.scoring_hand do
-                if context.scoring_hand[i]:get_id() == card.ability.extra.rank then
+                if context.scoring_hand[i]:get_id() == rank then
                     rank_check = true
                     break
                 end

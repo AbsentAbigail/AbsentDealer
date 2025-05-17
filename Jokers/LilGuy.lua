@@ -1,3 +1,5 @@
+local rank = 14
+
 SMODS.Joker {
     key = 'lilguy',
     loc_txt = {
@@ -20,7 +22,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
-                localize("Ace", "ranks"),
+                AUtils.localize_rank_from_id(rank),
                 center.ability.extra.retriggers
             }
         }
@@ -32,7 +34,7 @@ SMODS.Joker {
         end
 
         if context.repetition and context.cardarea == G.play then
-            if G.GAME.current_round.hands_played == 0 and context.other_card:get_id() == 14 then
+            if G.GAME.current_round.hands_played == 0 and context.other_card:get_id() == rank then
                 return {
                     message = localize('k_again_ex'),
                     repetitions = card.ability.extra.retriggers,
