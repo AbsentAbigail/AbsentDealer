@@ -8,8 +8,6 @@
 --- VERSION: 1.0.0
 --- BADGE_COLOR: FC03DF
 
-AUtils = {}
-
 SMODS.Atlas({
     key = "modicon",
     path = "modicon.png",
@@ -26,25 +24,39 @@ SMODS.Atlas {
 
 SMODS.load_file("Utils.lua")()
 
+-- Debug
+AUtils.Joker("Debuff")
+
 -- Common Jokers
 AUtils.Joker("CrowningCeremony")
 AUtils.Joker("Bubbles")
 AUtils.Joker("Djungelskog")
 AUtils.Joker("Aftonsparv")
 AUtils.Joker("Friendship")
+AUtils.Joker("Alice")
+AUtils.Joker("Imagination")
+AUtils.Joker("Catcus")
+AUtils.Joker("May")
+AUtils.Joker("April")
+AUtils.Joker("Nina")
 
 -- Uncommon Jokers
 AUtils.Joker("Blahaj")
 AUtils.Joker("HideAndSeek")
 AUtils.Joker("GlowingShard")
-AUtils.Joker("Catcus")
 AUtils.Joker("LilGuy")
 AUtils.Joker("Blackfisk")
 AUtils.Joker("ChainedJoker")
+AUtils.Joker("Sam")
 
 -- Rare Jokers
 AUtils.Joker("Catcitten")
 AUtils.Joker("Seal")
+AUtils.Joker("Cuddles")
 
 -- Legendary Jokers
 AUtils.Joker("Sherba")
+
+function SMODS.current_mod.reset_game_globals(run_start)
+	SealChangeHand()
+end

@@ -41,12 +41,12 @@ SMODS.Joker {
         end
 
         if context.before and G.GAME.blind:get_type() == 'Boss' and G.GAME.current_round.hands_played == 0 and context.scoring_name == card.ability.extra.poker_hand then
-            first_scoring_card = context.scoring_hand[1] or {}
-            second_Scoring_card = context.scoring_hand[2] or {}
+            local first_scoring_card = context.scoring_hand[1] or {}
+            local second_Scoring_card = context.scoring_hand[2] or {}
 
-            first_diff = 12 - (first_scoring_card.base.id or 0)
+            local first_diff = 12 - (first_scoring_card.base.id or 0)
             SMODS.modify_rank(first_scoring_card, first_diff)
-            second_diff = 2 - (second_Scoring_card.base.id or 0)
+            local second_diff = 2 - (second_Scoring_card.base.id or 0)
             SMODS.modify_rank(second_Scoring_card, second_diff)
 
             return {

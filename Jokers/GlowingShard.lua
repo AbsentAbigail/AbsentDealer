@@ -32,7 +32,8 @@ SMODS.Joker {
         if context.cardarea == G.jokers and context.before then
             local matching_cards = {}
             for _, scoring_card in ipairs(context.scoring_hand) do
-                if scoring_card:get_id() == G.GAME.current_round.mail_card.id then
+                local debuffed = AUtils.debuffed(scoring_card, card)
+                if scoring_card:get_id() == G.GAME.current_round.mail_card.id and not debuffed then
                     matching_cards[#matching_cards+1] = scoring_card
                     scoring_card:set_ability(G.P_CENTERS.m_glass, nil, true)
                     G.E_MANAGER:add_event(Event({

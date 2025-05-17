@@ -25,7 +25,11 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if context.cardarea == G.hand and context.individual then
+        if context.cardarea == G.hand and context.individual and not context.end_of_round then
+            local debuff = AUtils.debuffed(context.other_card, card)
+            if debuff then
+                return
+            end
             context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus or 0
             context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus + card.ability.extra.chip_bonus
             return {

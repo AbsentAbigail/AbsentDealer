@@ -34,12 +34,19 @@ SMODS.Joker {
 		G.hand:change_size(-card.ability.extra.hand_size)
 	end,
     calculate = function(self, card, context)
-        if context.cardarea == G.hand and context.individual then
-            if #G.hand.cards >= 8 then
-                return {
-                    dollars = card.ability.extra.money
-                }
+        if context.cardarea == G.hand and context.individual and not context.end_of_round then
+            if #G.hand.cards < 8 then
+                return
             end
+
+            local debuff = AUtils.debuffed(context.other_card, card)
+            if debuff then
+                return
+            end
+            
+            return {
+                dollars = card.ability.extra.money
+            }
         end
     end
 }

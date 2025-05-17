@@ -30,28 +30,28 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play then
             local card_to_copy = context.other_card
-            
+
             if not card_to_copy:is_suit("Diamonds", nil, nil) then
                 return
             end
             
-            if not (pseudorandom('catcitten') < G.GAME.probabilities.normal / card.ability.extra.odds) then
+            if not AUtils.calculate_odds('ad_catcitten', card.ability.extra.odds) then
                 return
             end
 
             G.E_MANAGER:add_event(Event({
-                    func = function()
-                        local copy = copy_card(card_to_copy, nil, nil, G.playing_card)
-                        copy:add_to_deck()
-                        G.deck.config.card_limit = G.deck.config.card_limit + 1
-                        table.insert(G.playing_cards, copy)
-                        G.hand:emplace(copy)
-                        copy.states.visible = nil
-                        copy:start_materialize()
-                        playing_card_joker_effects({copy})
-                        return true
-                    end
-                }))
+                func = function()
+                    local copy = copy_card(card_to_copy, nil, nil, G.playing_card)
+                    copy:add_to_deck()
+                    G.deck.config.card_limit = G.deck.config.card_limit + 1
+                    table.insert(G.playing_cards, copy)
+                    G.hand:emplace(copy)
+                    copy.states.visible = nil
+                    copy:start_materialize()
+                    playing_card_joker_effects({copy})
+                    return true
+                end
+            }))
         end
     end
 }

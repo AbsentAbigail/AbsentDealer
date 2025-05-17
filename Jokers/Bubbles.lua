@@ -12,6 +12,7 @@ SMODS.Joker {
     atlas = 'Jokers',
     pos = {x = 5, y = 0},
     blueprint_compat = true,
+    perishable_compat = false,
     rarity = 1,
     cost = 4,
     config = {
@@ -38,7 +39,8 @@ SMODS.Joker {
         end
         if not context.blueprint and context.before then
             for _, scoring_card in pairs(context.scoring_hand) do
-                if scoring_card:is_suit("Hearts", nil, nil) then
+                local debuffed = AUtils.debuffed(scoring_card, card)
+                if scoring_card:is_suit("Hearts", nil, nil) and not debuffed then
                     card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chip_mod
                     return {
                         message = localize('k_upgrade_ex'),

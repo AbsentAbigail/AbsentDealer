@@ -59,13 +59,13 @@ function Game:init_game_object()
 end
 
 -- Change required Poker Hand every round
-function SMODS.current_mod.reset_game_globals(run_start)
-	newHand = G.GAME.current_round.ajseal_card.poker_hand or ''
+function SealChangeHand()
+	local newHand = G.GAME.current_round.ajseal_card.poker_hand or ''
     local _poker_hands = {}
     for k, v in pairs(G.GAME.hands) do
         if v.visible and k ~= newHand then _poker_hands[#_poker_hands+1] = k end
     end
-    newHand = pseudorandom_element(_poker_hands, pseudoseed('ajseal'))
+    newHand = pseudorandom_element(_poker_hands, pseudoseed('ad_seal'))
 
 	G.GAME.current_round.ajseal_card = { poker_hand = newHand }
 end

@@ -11,6 +11,7 @@ SMODS.Joker {
     atlas = 'Jokers',
     pos = {x = 3, y = 1},
     blueprint_compat = true,
+    perishable_compat = false,
     rarity = 1,
     cost = 5,
     config = {
@@ -34,7 +35,7 @@ SMODS.Joker {
             }
         end
         if not context.blueprint and context.before then
-            suit_count = AUtils.get_suit_count_in_hand(context.scoring_hand)
+            local suit_count = AUtils.get_suit_count_in_hand(context.scoring_hand)
             if suit_count > 1 then
                 card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
                 return {

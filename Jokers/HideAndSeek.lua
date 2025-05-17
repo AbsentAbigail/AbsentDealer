@@ -31,7 +31,8 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.repetition and context.cardarea == G.hand then
-            if context.other_card.facing == "back" and (next(context.card_effects[1]) or #context.card_effects > 1) then
+            local debuffed = AUtils.debuffed(context.other_card, card)
+            if not debuffed and context.other_card.facing == "back" and (next(context.card_effects[1]) or #context.card_effects > 1) then
                 return {
                     message = localize('k_again_ex'),
                     repetitions = card.ability.extra.retrigger,
@@ -46,7 +47,7 @@ local stay_flipped_ref = Blind.stay_flipped
 function Blind.stay_flipped(self, area, card)
     if area == G.hand then
         local _, hideandseek = next(SMODS.find_card('j_ad_hideandseek'))
-        if hideandseek and pseudorandom('hideandseek') < G.GAME.probabilities.normal / hideandseek.ability.extra.odds then
+        if hideandseek and AUtils.calculate_odds('ad_hideandseek', hideandseek.ability.extra.odds) then
             return true
         end
     end
