@@ -27,7 +27,7 @@ function AUtils.debuffed(card, source)
             colour = G.C.RED,
             card = source
         }
-    elseif not Card.can_calculate(nil) then
+    elseif not Card:can_calculate(nil) then
         return {}
     end
 end
