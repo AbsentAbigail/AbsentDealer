@@ -35,14 +35,17 @@ AUtils.Joker("LilGuy")
 AUtils.Joker("Blackfisk")
 AUtils.Joker("ChainedJoker")
 AUtils.Joker("Sam")
+AUtils.Joker("SpareSkirt")
 
 -- Rare Jokers
 AUtils.Joker("Catcitten")
 AUtils.Joker("Seal")
 AUtils.Joker("Cuddles")
+AUtils.Joker("Bam")
 
 -- Legendary Jokers
 AUtils.Joker("Sherba")
+AUtils.Joker("Spot")
 
 if SMODS.current_mod.config.debug_jokers then
     -- Debug
