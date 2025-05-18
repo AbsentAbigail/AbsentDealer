@@ -23,7 +23,7 @@ SMODS.Joker {
         }
     },
     loc_vars = function(self, info_queue, center)
-        info_queue[#info_queue+1] = G.P_CENTERS.c_trances
+        info_queue[#info_queue+1] = G.P_CENTERS.c_trance
         return {
             vars = {
                 center.ability.extra.xMult,

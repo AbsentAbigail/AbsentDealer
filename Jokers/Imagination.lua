@@ -20,6 +20,9 @@ SMODS.Joker {
         }
     },
     loc_vars = function(self, info_queue, center)
+        info_queue[#info_queue+1] = G.P_CENTERS.e_foil
+        info_queue[#info_queue+1] = G.P_CENTERS.e_holo
+        info_queue[#info_queue+1] = G.P_CENTERS.e_polychrome
         return {
             vars = {
                 localize(G.GAME.current_round.imagination_card.rank, "ranks"),
