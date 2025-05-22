@@ -17,6 +17,7 @@ SMODS.Joker {
             chip_bonus = 2
         }
     },
+
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
@@ -24,6 +25,7 @@ SMODS.Joker {
             }
         }
     end,
+
     calculate = function(self, card, context)
         if context.cardarea == G.hand and context.individual and not context.end_of_round then
             local debuff = AUtils.debuffed(context.other_card, card)
@@ -37,5 +39,10 @@ SMODS.Joker {
                 colour = G.C.CHIPS
             }
         end
+    end,
+    
+    joker_display_def = function(JokerDisplay) -- Joker Display integration
+        return {
+        }
     end
 }

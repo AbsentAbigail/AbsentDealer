@@ -59,5 +59,44 @@ SMODS.Joker {
                 }
             end
         end
+    end,
+
+    joker_display_def = function(JokerDisplay) -- Joker Display integration
+        return {
+            text = {
+                { text = "X" },
+                { ref_table = "card.joker_display_values", ref_value = "xchips", retrigger_type = "exp" },
+            },
+            text_config = { colour = G.C.CHIPS },
+
+            reminder_text = {
+                { text = "(Bonus Cards)" }
+            },
+            
+            calc_function = function(card)
+                local text, _, scoring_hand = JokerDisplay.evaluate_hand()
+                local extra = card.ability.extra
+
+                if text == 'Unknown' then
+                    card.joker_display_values.xchips = 1
+                    return
+                end
+
+                local bonus_cards = 0
+
+                for _, scoring_card in pairs(scoring_hand) do
+                    if SMODS.has_enhancement(scoring_card, 'm_bonus') then
+                        bonus_cards = bonus_cards + JokerDisplay.calculate_card_triggers(scoring_card, scoring_hand)
+                    end
+                end
+
+                local xchips = 1
+                while bonus_cards > 0 do
+                    xchips = xchips * (extra.xchips + extra.xchips_gain * (bonus_cards - 1))
+                    bonus_cards = bonus_cards - 1
+                end
+                card.joker_display_values.xchips = xchips
+            end
+        }
     end
 }

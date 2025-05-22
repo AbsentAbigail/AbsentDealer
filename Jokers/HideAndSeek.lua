@@ -20,6 +20,7 @@ SMODS.Joker {
             retrigger = 2
         }
     },
+
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
@@ -29,10 +30,11 @@ SMODS.Joker {
             }
         }
     end,
+
     calculate = function(self, card, context)
         if context.repetition and context.cardarea == G.hand then
             local debuffed = AUtils.debuffed(context.other_card, card)
-            if not debuffed and context.other_card.facing == "back" and (next(context.card_effects[1]) or #context.card_effects > 1) then
+            if not context.other_card.facing == "back" and (next(context.card_effects[1]) or #context.card_effects > 1) then
                 return {
                     message = localize('k_again_ex'),
                     repetitions = card.ability.extra.retrigger,
@@ -40,6 +42,17 @@ SMODS.Joker {
                 }
             end
         end
+    end,
+    
+    joker_display_def = function(JokerDisplay) -- Joker Display integration
+        return {
+            retrigger_function = function(playing_card, scoring_hand, held_in_hand, joker_card)
+                return held_in_hand 
+                    and playing_card.facing and playing_card.facing == "back"
+                    and JokerDisplay.calculate_joker_triggers(joker_card) * joker_card.ability.extra.retrigger
+                    or 0
+            end
+        }
     end
 }
 

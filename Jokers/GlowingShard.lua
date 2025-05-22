@@ -17,6 +17,7 @@ SMODS.Joker {
         extra = {
         }
     },
+
     loc_vars = function(self, info_queue, center)
         info_queue[#info_queue+1] = G.P_CENTERS.m_glass
         return {
@@ -25,10 +26,12 @@ SMODS.Joker {
             }
         }
     end,
+
     calculate = function(self, card, context)
         if context.blueprint then
             return
         end
+
         if context.cardarea == G.jokers and context.before then
             local matching_cards = {}
             for _, scoring_card in ipairs(context.scoring_hand) do
@@ -51,6 +54,20 @@ SMODS.Joker {
                 }
             end
         end
+    end,
+    
+    joker_display_def = function(JokerDisplay) -- Joker Display integration
+        return {
+            reminder_text = {
+                { text = "(" },
+                { ref_table = "card.joker_display_values", ref_value = "localized_text" },
+                { text = ")" }
+            },
+            
+            calc_function = function(card)
+                card.joker_display_values.localized_text = localize(G.GAME.current_round.glowing_shard_card.rank, "ranks")
+            end
+        }
     end
 }
 
@@ -66,7 +83,7 @@ function reset_glowing_shard_rank()
             valid_mail_cards[#valid_mail_cards + 1] = playing_card
         end
     end
-    local mail_card = pseudorandom_element(valid_mail_cards, pseudoseed('vremade_mail' .. G.GAME.round_resets.ante))
+    local mail_card = pseudorandom_element(valid_mail_cards, pseudoseed('ad_glowing_shard' .. G.GAME.round_resets.ante))
     if mail_card then
         G.GAME.current_round.glowing_shard_card.rank = mail_card.base.value
         G.GAME.current_round.glowing_shard_card.id = mail_card.base.id

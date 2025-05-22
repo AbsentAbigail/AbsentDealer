@@ -19,6 +19,7 @@ SMODS.Joker {
             xmult = 2
         }
     },
+
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
@@ -26,12 +27,23 @@ SMODS.Joker {
             }
         }
     end,
+
     calculate = function(self, card, context)
         if context.joker_main then
             return {
                 xmult = card.ability.extra.xmult,
             }
         end
+    end,
+    
+    joker_display_def = function(JokerDisplay) -- Joker Display integration
+        return {
+            text = {
+                { text = "X" },
+                { ref_table = "card.ability.extra", ref_value = "xmult", retrigger_type = "exp" }
+            },
+            text_config = { colour = G.C.MULT }            
+        }
     end
 }
 

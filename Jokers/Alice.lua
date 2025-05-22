@@ -22,6 +22,7 @@ SMODS.Joker {
             poker_hand = nil
         }
     },
+
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
@@ -31,6 +32,7 @@ SMODS.Joker {
             }
         }
     end,
+
     calculate = function(self, card, context)
         if context.joker_main then
             return {
@@ -51,5 +53,23 @@ SMODS.Joker {
 
             return ret
         end
+    end,
+    
+    joker_display_def = function(JokerDisplay) -- Joker Display integration
+        return {
+            text = {
+                { text = "+" },
+                { ref_table = "card.ability.extra", ref_value = "chips", retrigger_type = "mult" }
+            },
+            text_config = { colour = G.C.CHIPS },
+            reminder_text = {
+                { text = "(" },
+                { ref_table = "card.joker_display_values", ref_value = "hand" },
+                { text = ")" },
+            },
+            calc_function = function(card)
+                card.joker_display_values.hand = (card.ability.extra.poker_hand and localize(card.ability.extra.poker_hand, "poker_hands")) or "-"
+            end
+        }
     end
 }

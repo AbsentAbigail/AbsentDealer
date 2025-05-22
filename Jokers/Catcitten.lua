@@ -19,6 +19,7 @@ SMODS.Joker {
             odds = 5
         }
     },
+
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
@@ -27,6 +28,7 @@ SMODS.Joker {
             }
         }
     end,
+
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play then
             local card_to_copy = context.other_card
@@ -53,5 +55,32 @@ SMODS.Joker {
                 end
             }))
         end
+    end,
+    
+    joker_display_def = function(JokerDisplay) -- Joker Display integration
+        return {
+            text = {
+                { ref_table = "card.joker_display_values", ref_value = "odds", scale = 0.35 }
+            },
+            text_config = { colour = G.C.GREEN },
+
+            reminder_text = {
+                { text = "(" },
+                { ref_table = "card.joker_display_values", ref_value = "localized_text", colour = lighten(G.C.SUITS["Diamonds"], 0.35) },
+                { text = ")" }
+            },
+
+            calc_function = function(card)
+                card.joker_display_values.localized_text = localize("Diamonds", 'suits_plural')
+                card.joker_display_values.odds = localize {
+                    type = 'variable',
+                    key = "jdis_odds",
+                    vars = {
+                        (G.GAME and G.GAME.probabilities.normal or 1),
+                        card.ability.extra.odds
+                    }
+                }
+            end
+        }
     end
 }

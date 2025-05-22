@@ -20,6 +20,7 @@ SMODS.Joker {
             xmult_base = 1
         }
     },
+
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
@@ -27,6 +28,7 @@ SMODS.Joker {
             }
         }
     end,
+
     calculate = function(self, card, context)
         local extra = card.ability.extra
 
@@ -37,13 +39,6 @@ SMODS.Joker {
         end
         if context.after and not context.blueprint then
             extra.xmult = extra.xmult * 2
-            --SMODS.calculate_effect(
-            --    {
-            --        message = "Doubled!",
-            --        colour = G.C.INACTIVE
-            --    },
-            --    card
-            --)
             return 
             {
                 message = "Doubled!",
@@ -60,5 +55,18 @@ SMODS.Joker {
                 }
             end
         end
+    end,
+    
+    joker_display_def = function(JokerDisplay) -- Joker Display integration
+        return {
+            text = {
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        { ref_table = "card.ability.extra", ref_value = "xmult", retrigger_type = "exp" }
+                    }
+                }
+            },
+        }
     end
 }

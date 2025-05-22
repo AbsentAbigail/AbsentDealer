@@ -1,6 +1,6 @@
 local convertFirstToRank = 12
 local convertSecondToRank = 2
-
+local poker_hand = "Pair"
 
 SMODS.Joker {
     key = 'crowningceremony',
@@ -20,18 +20,19 @@ SMODS.Joker {
     cost = 3,
     config = {
         extra = {
-            poker_hand = "Pair"
         }
     },
+
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
                 AUtils.localize_rank_from_id(convertFirstToRank),
                 AUtils.localize_rank_from_id(convertSecondToRank),
-                localize(center.ability.extra.poker_hand, 'poker_hands')
+                localize(poker_hand, 'poker_hands')
             }
         }
     end,
+
     calculate = function(self, card, context)
         if context.blueprint then
             return -- not blueprint compatible
@@ -42,7 +43,7 @@ SMODS.Joker {
             juice_card_until(card, eval, true) -- Jiggle if active
         end
 
-        if context.before and G.GAME.blind:get_type() == 'Boss' and G.GAME.current_round.hands_played == 0 and context.scoring_name == card.ability.extra.poker_hand then
+        if context.before and G.GAME.blind:get_type() == 'Boss' and G.GAME.current_round.hands_played == 0 and context.scoring_name == poker_hand then
             local first_scoring_card = context.scoring_hand[1] or {}
             local second_Scoring_card = context.scoring_hand[2] or {}
 
@@ -55,5 +56,19 @@ SMODS.Joker {
                 message = "Crowned!"
             }
         end
+    end,
+    
+    joker_display_def = function(JokerDisplay) -- Joker Display integration
+        return {
+            reminder_text = {
+                { text = "(" },
+                { ref_table = "card.joker_display_values", ref_value = "active" },
+                { text = ")" },
+            },
+            
+            calc_function = function(card)
+                card.joker_display_values.active = (G.GAME and G.GAME.blind:get_type() == 'Boss' and G.GAME.current_round.hands_played == 0 and localize("jdis_active") or localize("jdis_inactive"))
+            end
+        }
     end
 }

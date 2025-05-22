@@ -21,6 +21,7 @@ SMODS.Joker {
             chips = 23
         }
     },
+    
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
@@ -29,12 +30,32 @@ SMODS.Joker {
             }
         }
     end,
+    
     calculate = function(self, card, context)
-        if context.joker_main and AUtils.Contains(primes, G.GAME.current_round.hands_left) then
+        if context.joker_main and G.GAME and AUtils.Contains(primes, G.GAME.current_round.hands_left) then
             return {
                 mult = card.ability.extra.mult,
                 chips = card.ability.extra.chips
             }
         end
+    end,
+    
+    joker_display_def = function(JokerDisplay) -- Joker Display integration
+        return {
+            text = {
+                { text = "+",                              colour = G.C.CHIPS },
+                { ref_table = "card.joker_display_values", ref_value = "chips", colour = G.C.CHIPS, retrigger_type = "mult" },
+                { text = " +",                             colour = G.C.MULT },
+                { ref_table = "card.joker_display_values", ref_value = "mult",  colour = G.C.MULT,  retrigger_type = "mult" }
+            },
+            reminder_text = {
+                { text = "(Prime hands)" }
+            },
+            calc_function = function(card)
+                local is_prime = G.GAME and AUtils.Contains(primes, G.GAME.current_round.hands_left - 1)
+                card.joker_display_values.chips = is_prime and card.ability.extra.chips or 0
+                card.joker_display_values.mult = is_prime and card.ability.extra.mult or 0
+            end
+        }
     end
 }

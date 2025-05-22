@@ -22,6 +22,7 @@ SMODS.Joker {
             xMult_gain = 0.2
         }
     },
+
     loc_vars = function(self, info_queue, center)
         info_queue[#info_queue+1] = G.P_CENTERS.c_trance
         return {
@@ -31,6 +32,7 @@ SMODS.Joker {
             }
         }
     end,
+
     add_to_deck = function(self, card, from_debuff)
 		if not (#G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit) then
             return -- no space in consumable area
@@ -54,6 +56,7 @@ SMODS.Joker {
             end
         }, card)
 	end,
+
     calculate = function(self, card, context)
         if context.joker_main then
             return {
@@ -75,5 +78,15 @@ SMODS.Joker {
                 }
             end
         end
+    end,
+    
+    joker_display_def = function(JokerDisplay) -- Joker Display integration
+        return {
+            text = {
+                { text = "X" },
+                { ref_table = "card.ability.extra", ref_value = "xMult", retrigger_type = "exp" }
+            },
+            text_config = { colour = G.C.MULT }
+        }
     end
 }

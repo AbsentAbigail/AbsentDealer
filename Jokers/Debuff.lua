@@ -15,12 +15,14 @@ SMODS.Joker {
         extra = {
         }
     },
+    
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
             }
         }
     end,
+
     calculate = function(self, card, context)
         if context.setting_blind then
             for _, v in ipairs(G.playing_cards) do
@@ -32,5 +34,13 @@ SMODS.Joker {
                 SMODS.debuff_card(v, false, card)
             end
         end
+    end,
+    
+    joker_display_def = function(JokerDisplay) -- Joker Display integration
+        return {
+            text = {
+                { text = "lol" }
+            }
+        }
     end
 }

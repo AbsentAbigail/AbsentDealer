@@ -19,6 +19,7 @@ SMODS.Joker {
         extra = {
         }
     },
+
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
@@ -26,6 +27,7 @@ SMODS.Joker {
             }
         }
     end,
+
     calculate = function(self, card, context)
         if context.blueprint then
             return -- not blueprint compatible
@@ -48,6 +50,20 @@ SMODS.Joker {
                 message = localize('k_reset')
             }
         end
+    end,
+    
+    joker_display_def = function(JokerDisplay) -- Joker Display integration
+        return {
+            reminder_text = {
+                { text = "(" },
+                { ref_table = "card.joker_display_values", ref_value = "localized_text" },
+                { text = ")" }
+            },
+            
+            calc_function = function(card)
+                card.joker_display_values.localized_text = localize(G.GAME.current_round.ajseal_card.poker_hand, 'poker_hands')
+            end
+        }
     end
 }
 
