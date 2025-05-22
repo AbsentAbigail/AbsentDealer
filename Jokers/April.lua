@@ -5,7 +5,8 @@ SMODS.Joker {
         name = 'April',
         text = {
             "If scoring hand",
-            "contains a {C:attention}#1#{} earn {C:money}$#2#"
+            "contains a {C:attention}#1#{} earn {C:money}$#2#",
+            "{C:inactive}(Art: Megamarine)"
         }
     },
     atlas = 'Jokers',

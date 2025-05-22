@@ -6,7 +6,8 @@ SMODS.Joker {
         name = 'May',
         text = {
             "{C:attention}#1#s{} held in hand each",
-            "give {C:chips}+#2#{} Chips and {C:mult}+#3#{} Mult"
+            "give {C:chips}+#2#{} Chips and {C:mult}+#3#{} Mult",
+            "{C:inactive}(Art: Megamarine)"
         }
     },
     atlas = 'Jokers',

@@ -5,7 +5,8 @@ SMODS.Joker {
         text = {
             "Played {C:attention}Stone{} cards",
             "have a {C:green}#1# in #2#{} chance",
-            "to break and earn {C:money}$#3#"
+            "to break and earn {C:money}$#3#",
+            "{C:inactive}(Art: Megamarine)"
         }
     },
     atlas = 'Jokers',
