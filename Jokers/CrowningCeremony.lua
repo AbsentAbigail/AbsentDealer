@@ -7,7 +7,7 @@ SMODS.Joker {
     loc_txt = {
         name = 'Crowning Ceremony',
         text = {
-            "If first hand of {C:attention}Boss Blind{}",
+            "During {C:attention}Boss Blind{}, if played hands",
             "is a {C:attention}#3#{}, convert first scoring",
             "card into a {C:attention}#1#{}, and second",
             "scoring card into a {C:attention}#2#{}"
@@ -39,11 +39,11 @@ SMODS.Joker {
         end
 
         if context.first_hand_drawn then
-            local eval = function() return G.GAME.blind:get_type() == 'Boss' and G.GAME.current_round.hands_played == 0 and not G.RESET_JIGGLES end
+            local eval = function() return G.GAME.blind:get_type() == 'Boss' and not G.RESET_JIGGLES end
             juice_card_until(card, eval, true) -- Jiggle if active
         end
 
-        if context.before and G.GAME.blind:get_type() == 'Boss' and G.GAME.current_round.hands_played == 0 and context.scoring_name == poker_hand then
+        if context.before and G.GAME.blind:get_type() == 'Boss' and context.scoring_name == poker_hand then
             local first_scoring_card = context.scoring_hand[1] or {}
             local second_Scoring_card = context.scoring_hand[2] or {}
 
@@ -67,7 +67,7 @@ SMODS.Joker {
             },
             
             calc_function = function(card)
-                card.joker_display_values.active = (G.GAME and G.GAME.blind:get_type() == 'Boss' and G.GAME.current_round.hands_played == 0 and localize("jdis_active") or localize("jdis_inactive"))
+                card.joker_display_values.active = (G.GAME and G.GAME.blind:get_type() == 'Boss' and localize("jdis_active") or localize("jdis_inactive"))
             end
         }
     end

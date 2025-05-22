@@ -18,6 +18,7 @@ SMODS.Joker {
             money = 4
         }
     },
+
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
@@ -26,6 +27,7 @@ SMODS.Joker {
             }
         }
     end,
+    
     calculate = function(self, card, context)
         if context.before and context.cardarea == G.jokers then
             for _, scoring_card in ipairs(context.scoring_hand) do
@@ -46,7 +48,7 @@ SMODS.Joker {
                 { ref_table = "card.joker_display_values", ref_value = "dollars", retrigger_type = "mult" },
             },
             text_config = { colour = G.C.GOLD },
-            
+
             reminder_text = {
                 { text = "(" },
                 { ref_table = "card.joker_display_values", ref_value = "localized_text", colour = lighten(G.C.SUITS["Diamonds"], 0.35) },
