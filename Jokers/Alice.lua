@@ -1,14 +1,5 @@
 SMODS.Joker {
     key = 'alice',
-    loc_txt = {
-        name = 'Alice',
-        text = {
-            "Gives {C:chips}+#1#{} Chips for each",
-            "{C:attention}consecutive{} time poker hand",
-            "has been played",
-            "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips on #3#)"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 7, y = 1},
     blueprint_compat = true,

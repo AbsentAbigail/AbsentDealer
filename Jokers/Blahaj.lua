@@ -1,15 +1,5 @@
 SMODS.Joker {
     key = 'blahaj',
-    loc_txt = {
-        name = 'Blåhaj',
-        text = {
-            "On pickup, gain a {C:blue}Trance",
-            "This Joker gains {X:mult,C:white}X#2#{} Mult",
-            "every time a card with a",
-            "{C:blue}Blue Seal{} is scored",
-            "{C:inactive}(Currently {X:mult,C:white} X#1# {C:inactive} Mult)"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 0, y = 0},
     blueprint_compat = true,

@@ -1,14 +1,5 @@
 SMODS.Joker {
     key = 'bubbles',
-    loc_txt = {
-        name = 'Bubbles the Bear',
-        text = {
-            "This joker gains {C:chips}+#1#{} Chips,",
-            "if played hand contains scoring",
-            "{C:hearts}Hearts",
-            "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 5, y = 0},
     blueprint_compat = true,

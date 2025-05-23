@@ -1,13 +1,5 @@
 SMODS.Joker {
     key = 'bam',
-    loc_txt = {
-        name = 'Bam',
-        text = {
-            "Scored {C:attention}Bonus{} cards give {X:chips,C:white}X#1#{} Chips",
-            "and increase this by {X:chips,C:white}X#2#{}, resets",
-            "at the end of round"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 8, y = 2},
     blueprint_compat = true,

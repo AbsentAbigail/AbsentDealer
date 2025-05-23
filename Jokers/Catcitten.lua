@@ -1,14 +1,5 @@
 SMODS.Joker {
     key = 'catcitten',
-    loc_txt = {
-        name = 'Catcitten',
-        text = {
-            "Played cards with {C:diamonds}Diamond{}",
-            "suit have a {C:green}#1# in #2#{} chance to",
-            "add a permanent copy to deck",
-            "and draw it to {C:attention}hand"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 1, y = 0},
     blueprint_compat = true,

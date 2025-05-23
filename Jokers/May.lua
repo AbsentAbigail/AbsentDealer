@@ -2,14 +2,6 @@ local rank = 5
 
 SMODS.Joker {
     key = 'may',
-    loc_txt = {
-        name = 'May',
-        text = {
-            "{C:attention}#1#s{} held in hand each",
-            "give {C:chips}+#2#{} Chips and {C:mult}+#3#{} Mult",
-            "{C:inactive}(Art: Megamarine)"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 0, y = 2},
     blueprint_compat = true,

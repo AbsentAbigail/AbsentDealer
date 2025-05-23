@@ -1,14 +1,5 @@
 SMODS.Joker {
     key = 'nina',
-    loc_txt = {
-        name = 'Nina',
-        text = {
-            "Played {C:attention}Stone{} cards",
-            "have a {C:green}#1# in #2#{} chance",
-            "to break and earn {C:money}$#3#",
-            "{C:inactive}(Art: Megamarine)"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 2, y = 2},
     soul_pos = {x = 3, y = 2},

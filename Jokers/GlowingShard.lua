@@ -1,13 +1,5 @@
 SMODS.Joker {
     key = 'glowingshard',
-    loc_txt = {
-        name = 'Glowing Shard',
-        text = {
-            "All scoring {C:attention}#1#s{} become {C:attention}Glass",
-            "cards when played, rank",
-            "changes every round"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 6, y = 0},
     blueprint_compat = false,

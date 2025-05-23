@@ -2,14 +2,6 @@ local poker_hand = "Three of a Kind"
 
 SMODS.Joker {
     key = 'spare_skirt',
-    loc_txt = {
-        name = 'Spare Skirt',
-        text = {
-            "This joker gains {C:mult}+#1#{} Mult if played",
-            "hand contains a {C:attention}#3#",
-            "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 5, y = 2},
     blueprint_compat = true,

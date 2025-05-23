@@ -1,13 +1,5 @@
 SMODS.Joker {
     key = 'blackfisk',
-    loc_txt = {
-        name = 'Bläckfisk',
-        text = {
-            "{C:attention}+#1#{} hand size",
-            "When holding {C:attention}8+{} cards in hand,",
-            "earn {C:money}$#2#{} for each"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 4, y = 1},
     blueprint_compat = true,

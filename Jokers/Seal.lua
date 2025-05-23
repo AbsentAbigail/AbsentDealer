@@ -1,15 +1,5 @@
 SMODS.Joker {
     key = 'seal',
-    loc_txt = {
-        name = 'Seal',
-        text = {
-            "If first hand of round is",
-            "a {C:attention}#1#{}, add a random",
-            "{C:attention}seal{} to the first scoring",
-            "card, poker hand changes",
-            "a end of round"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 2, y = 0},
     blueprint_compat = false,

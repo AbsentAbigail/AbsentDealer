@@ -1,13 +1,5 @@
 SMODS.Joker {
     key = 'sherba',
-    loc_txt = {
-        name = 'Sherba',
-        text = {
-            "During {C:attention}first hand of round{},",
-            "retrigger all played cards {C:attention}once",
-            "{C:attention}for each remaining hand"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 0, y = 1},
     soul_pos = {x = 1, y = 1},

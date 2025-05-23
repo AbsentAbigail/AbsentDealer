@@ -1,13 +1,5 @@
 SMODS.Joker {
     key = 'spot',
-    loc_txt = {
-        name = 'Spot',
-        text = {
-            "{X:mult,C:white}X#1#",
-            "Doubles after each {C:blue}hand{},",
-            "resets at end of round"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 6, y = 2},
     soul_pos = {x = 7, y = 2},

@@ -1,14 +1,5 @@
 SMODS.Joker {
     key = 'hideandseek',
-    loc_txt = {
-        name = 'Hide and Seek',
-        text = {
-            "{C:green}#1# in #2#{} chance to",
-            "draw cards face down,",
-            "{C:attention}face down cards held in",
-            "{C:attention}hand{} retrigger {C:attention}#3#{} times"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 4, y = 0},
     blueprint_compat = true,

@@ -2,13 +2,6 @@ local rank = 14
 
 SMODS.Joker {
     key = 'lilguy',
-    loc_txt = {
-        name = 'Lil Guy',
-        text = {
-            "During {C:attention}first hand of round{},",
-            "retrigger played {C:attention}#1#s #2#{} times"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 9, y = 0},
     blueprint_compat = true,

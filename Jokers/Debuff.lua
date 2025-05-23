@@ -1,11 +1,5 @@
 SMODS.Joker {
     key = 'debuff',
-    loc_txt = {
-        name = 'Debuff',
-        text = {
-            "Debuffs playing cards"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 9, y = 2},
     blueprint_compat = false,

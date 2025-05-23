@@ -1,12 +1,5 @@
 SMODS.Joker {
     key = 'djungelskog',
-    loc_txt = {
-        name = 'Djungelskog',
-        text = {
-            "Each card {C:attention}held in hand{}",
-            "permanently gains {C:chips}+#1#{} Chips"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 7, y = 0},
     blueprint_compat = true,

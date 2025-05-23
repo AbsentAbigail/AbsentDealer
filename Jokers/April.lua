@@ -1,14 +1,6 @@
 local rank = 4
 SMODS.Joker {
     key = 'april',
-    loc_txt = {
-        name = 'April',
-        text = {
-            "If scoring hand",
-            "contains a {C:attention}#1#{} earn {C:money}$#2#",
-            "{C:inactive}(Art: Megamarine)"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 1, y = 2},
     blueprint_compat = true,

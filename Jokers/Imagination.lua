@@ -1,14 +1,5 @@
 SMODS.Joker {
     key = 'imagination',
-    loc_txt = {
-        name = 'Imagination',
-        text = {
-            "Scored {C:attention}#1#s{} have a {C:green}#2# in #3#{} chance",
-            "to gain {C:dark_edition}Foil{}, {C:dark_edition}Holographic{},",
-            "or {C:dark_edition}Polychrome{} effect, rank",
-            "changes every round"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 8, y = 1},
     blueprint_compat = false,

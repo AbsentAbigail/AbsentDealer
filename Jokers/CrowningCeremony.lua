@@ -4,15 +4,6 @@ local poker_hand = "Pair"
 
 SMODS.Joker {
     key = 'crowningceremony',
-    loc_txt = {
-        name = 'Crowning Ceremony',
-        text = {
-            "During {C:attention}Boss Blind{}, if played hands",
-            "is a {C:attention}#3#{}, convert first scoring",
-            "card into a {C:attention}#1#{}, and second",
-            "scoring card into a {C:attention}#2#{}"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 3, y = 0},
     blueprint_compat = false,

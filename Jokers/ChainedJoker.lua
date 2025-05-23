@@ -1,12 +1,5 @@
 SMODS.Joker {
     key = 'chained_joker',
-    loc_txt = {
-        name = 'Chained Joker',
-        text = {
-            "{X:mult,C:white}X#1#{} Mult",
-            "{C:inactive}(Always eternal)"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 5, y = 1},
     soul_pos = {x = 6, y = 1},

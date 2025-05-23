@@ -3,13 +3,6 @@ local poker_hand = "Flush"
 
 SMODS.Joker {
     key = 'sam',
-    loc_txt = {
-        name = 'Sam',
-        text = {
-            "{X:chips,C:white}X#1#{} Chips if poker hand",
-            "contains a {C:attention}#2#{} and a {C:attention}Flush"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 4, y = 2},
     blueprint_compat = true,

@@ -1,13 +1,5 @@
 SMODS.Joker {
     key = 'friendship',
-    loc_txt = {
-        name = 'Friendship',
-        text = {
-            "This joker gains {C:mult}+#1#{} Mult, if scoring",
-            "hand contains {C:attention}2+{} unique suits",
-            "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
-        }
-    },
     atlas = 'Jokers',
     pos = {x = 3, y = 1},
     blueprint_compat = true,
