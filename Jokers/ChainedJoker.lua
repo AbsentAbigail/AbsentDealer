@@ -32,10 +32,13 @@ SMODS.Joker {
     joker_display_def = function(JokerDisplay) -- Joker Display integration
         return {
             text = {
-                { text = "X" },
-                { ref_table = "card.ability.extra", ref_value = "xmult", retrigger_type = "exp" }
-            },
-            text_config = { colour = G.C.MULT }            
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        { ref_table = "card.ability.extra", ref_value = "xmult", retrigger_type = "exp" }
+                    }
+                }
+            },        
         }
     end
 }
