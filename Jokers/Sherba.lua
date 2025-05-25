@@ -45,6 +45,12 @@ SMODS.Joker {
             
             calc_function = function(card)
                 card.joker_display_values.active = (G.GAME and G.GAME.current_round.hands_played == 0 and localize("jdis_active") or localize("jdis_inactive"))
+            end,
+
+            retrigger_function = function(playing_card, scoring_hand, held_in_hand, joker_card)
+                if held_in_hand then return 0 end
+                if not (G.GAME and G.GAME.current_round.hands_played == 0) then return 0 end
+                return (G.GAME.current_round.hands_left - 1) * JokerDisplay.calculate_joker_triggers(joker_card)
             end
         }
     end

@@ -13,6 +13,7 @@ SMODS.Joker {
     },
 
     loc_vars = function(self, info_queue, center)
+        info_queue[#info_queue+1] = ad_megamarine_credit
         return {
             vars = {
                 AUtils.localize_rank_from_id(rank),

@@ -12,6 +12,7 @@ SMODS.Joker {
             xchips_gain = 0.1
         }
     },
+
     loc_vars = function(self, info_queue, center)
         info_queue[#info_queue+1] = G.P_CENTERS.m_bonus
         return {
@@ -21,6 +22,7 @@ SMODS.Joker {
             }
         }
     end,
+
     calculate = function(self, card, context)
         local extra = card.ability.extra
 
@@ -53,6 +55,15 @@ SMODS.Joker {
         end
     end,
 
+    in_pool = function(self, args) --equivalent to `enhancement_gate = 'm_lucky'`
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, 'm_bonus') then
+                return true
+            end
+        end
+        return false
+    end,
+    
     joker_display_def = function(JokerDisplay) -- Joker Display integration
         return {
             text = {

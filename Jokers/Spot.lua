@@ -29,6 +29,7 @@ SMODS.Joker {
                 xmult = extra.xmult
             }
         end
+        
         if context.after and not context.blueprint then
             extra.xmult = extra.xmult * 2
             return 
@@ -38,6 +39,8 @@ SMODS.Joker {
                 message_card = card
             }
         end
+
+
         if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
             if extra.xmult > extra.xmult_base then
                 extra.xmult = extra.xmult_base

@@ -53,6 +53,7 @@ SMODS.Joker {
 
             retrigger_function = function(playing_card, scoring_hand, held_in_hand, joker_card)
                 if held_in_hand then return 0 end
+                if not (G.GAME and G.GAME.current_round.hands_played == 0) then return 0 end
                 return playing_card:get_id() == rank and
                     joker_card.ability.extra.retriggers * JokerDisplay.calculate_joker_triggers(joker_card) or 0
             end

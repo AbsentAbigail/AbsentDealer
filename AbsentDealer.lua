@@ -12,7 +12,18 @@ SMODS.Atlas {
     py = 95
 }
 
+SMODS.Atlas {
+    key = 'Scale',
+    path = 'Scale.png',
+    px = 71,
+    py = 95
+}
+
 SMODS.load_file("Utils.lua")()
+
+-- Credit Centers
+ad_megamarine_credit = {set = "Other", key = "ad_credit", vars = {"Art", "Megamarine", colours = { HEX("a950c0"), G.C.BLUE}}}
+ad_tsuki_credit = {set = "Other", key = "ad_credit", vars = {"Idea", "tsuki", colours = { HEX("ff509f"), G.C.BLUE}}}
 
 -- Common Jokers
 AUtils.Joker("CrowningCeremony")
@@ -36,16 +47,25 @@ AUtils.Joker("Blackfisk")
 AUtils.Joker("ChainedJoker")
 AUtils.Joker("Sam")
 AUtils.Joker("SpareSkirt")
+AUtils.Joker("Chirp")
+AUtils.Joker("Scale")
 
 -- Rare Jokers
 AUtils.Joker("Catcitten")
 AUtils.Joker("Seal")
 AUtils.Joker("Cuddles")
 AUtils.Joker("Bam")
+AUtils.Joker("Boozle")
+AUtils.Joker("SnuggleBuddies")
+AUtils.Joker("AprilAndMay")
+AUtils.Joker("Elsta")
+AUtils.Joker("ShadyBox")
+AUtils.Joker("Patch")
 
 -- Legendary Jokers
 AUtils.Joker("Sherba")
 AUtils.Joker("Spot")
+AUtils.Joker("Octavia")
 
 if SMODS.current_mod.config.debug_jokers then
     -- Debug

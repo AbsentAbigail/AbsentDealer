@@ -17,8 +17,7 @@ return {
             },
             j_ad_april = {
                 name = 'April',
-                text = {"If scoring hand", "contains a {C:attention}#1#{} earn {C:money}$#2#",
-                        "{C:inactive}(Art: Megamarine)"}
+                text = {"If scoring hand", "contains a {C:attention}#1#{} earn {C:money}$#2#"}
             },
             j_ad_bam = {
                 name = 'Bam',
@@ -43,7 +42,7 @@ return {
             },
             j_ad_catcitten = {
                 name = 'Catcitten',
-                text = {"Played cards with {C:diamonds}Diamond{}", "suit have a {C:green}#1# in #2#{} chance to",
+                text = {"Scored cards with {C:diamonds}Diamond{}", "suit have a {C:green}#1# in #2#{} chance to",
                         "add a permanent copy to deck", "and draw it to {C:attention}hand"}
             },
             j_ad_catcus = {
@@ -101,13 +100,12 @@ return {
             },
             j_ad_may = {
                 name = 'May',
-                text = {"{C:attention}#1#s{} held in hand each", "give {C:chips}+#2#{} Chips and {C:mult}+#3#{} Mult",
-                        "{C:inactive}(Art: Megamarine)"}
+                text = {"{C:attention}#1#s{} held in hand each", "give {C:chips}+#2#{} Chips and {C:mult}+#3#{} Mult"}
             },
             j_ad_nina = {
                 name = 'Nina',
                 text = {"Played {C:attention}Stone{} cards", "have a {C:green}#1# in #2#{} chance",
-                        "to break and earn {C:money}$#3#", "{C:inactive}(Art: Megamarine)"}
+                        "to break and earn {C:money}$#3#"}
             },
             j_ad_sam = {
                 name = 'Sam',
@@ -132,9 +130,58 @@ return {
             j_ad_spot = {
                 name = 'Spot',
                 text = {"{X:mult,C:white}X#1#", "Doubles after each {C:blue}hand{},", "resets at end of round"}
+            },
+            j_ad_chirp = {
+                name = 'Chirp',
+                text = {"{C:attention}#1#s{} held in hand", "give {C:chips}+#2#{} Chips"}
+            },
+            j_ad_boozle = {
+                name = "Boozle",
+                text = {"Cards with {C:spades}Spade{} suit", "have a {C:green}#1# in #2#{} chance to",
+                        "retrigger {C:attention}#3#{} times"}
+            },
+            j_ad_snuggle_buddies = {
+                name = "Snuggle Buddies",
+                text = {"Scoring cards with {C:hearts}Heart{} suit", "have a {C:green}#1# in #2#{} chance to",
+                        "be destroyed and create a {C:blue}Deja Vu", "{C:inactive}(Must have room)"}
+            },
+            j_ad_april_and_may = {
+                name = "April and May",
+                text = {"Scoring cards with {C:clubs}Club{} suit", "have a {C:green}#1# in #2#{} chance to",
+                        "become {C:attention}Mult{} cards", "Scored {C:attention}Mult{} cards give",
+                        "{X:mult,C:white}X#3#{} Mult"}
+            },
+            j_ad_elsta = {
+                name = "Elsta",
+                text = {"Retrigger all card {C:attention}held in hand", "abilities once for each {C:attention}Steel{}",
+                        "card played this round", "{C:inactive}(Currently #1#)"}
+            },
+            j_ad_shady_box = {
+                name = "Box of Memories",
+                text = {"If you have at least {C:attention}4", "other jokers, sell this", "card to destroy them and",
+                        "create a random legendary joker"}
+            },
+            j_ad_scale = {
+                name = "Scale",
+                text = {"{X:mult,C:white}X#1#{} Mult if remaining", "{C:blue}hands{} are equal to",
+                        "remaining {C:red}discards"}
+            },
+            j_ad_octavia = {
+                name = "Octavia",
+                text = {"Balance {C:chips}Chips{} and {C:mult}Mult{} if", "remaining {C:blue}hands{} are equal",
+                        "to remaining {C:red}discards"}
+            },
+            j_ad_patch = {
+                name = "Patch",
+                text = {"If first played {C:attention}poker hand{}", "doesn't beat Blind, upgrade", "its level"}
             }
         },
-        Other = {},
+        Other = {
+            ad_credit = {
+                name = "Credit",
+                text = {"{V:1}#1#: {V:2}#2#"}
+            }
+        },
         Planet = {},
         Spectral = {},
         Stake = {},

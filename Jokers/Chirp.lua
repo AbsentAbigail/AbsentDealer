@@ -1,26 +1,24 @@
-local rank = 5
+local rank = 11
 
 SMODS.Joker {
-    key = 'may',
+    key = 'chirp',
     atlas = 'Jokers',
-    pos = {x = 0, y = 2},
+    pos = {x = 0, y = 3},
     blueprint_compat = true,
-    rarity = 1,
-    cost = 3,
+    rarity = 2,
+    cost = 6,
     config = {
         extra = {
-            chips = 5,
+            chips = 150,
             mult = 5,
         }
     },
 
     loc_vars = function(self, info_queue, center)
-        info_queue[#info_queue+1] = ad_megamarine_credit
         return {
             vars = {
                 AUtils.localize_rank_from_id(rank),
-                center.ability.extra.chips,
-                center.ability.extra.mult
+                center.ability.extra.chips
             }
         }
     end,
@@ -30,8 +28,7 @@ SMODS.Joker {
             if context.other_card:get_id() == rank then
                 local debuffed = AUtils.debuffed(context.other_card, card)
                 return debuffed or {
-                    chips = card.ability.extra.chips,
-                    mult = card.ability.extra.mult,
+                    chips = card.ability.extra.chips
                 }
             end
         end
@@ -41,9 +38,7 @@ SMODS.Joker {
         return {
             text = {
                 { text = "+", colour = G.C.CHIPS },
-                { ref_table = "card.joker_display_values", ref_value = "chips", retrigger_type = "mult", colour = G.C.CHIPS },
-                { text = " +", colour = G.C.MULT },
-                { ref_table = "card.joker_display_values", ref_value = "mult", retrigger_type = "mult", colour = G.C.MULT },
+                { ref_table = "card.joker_display_values", ref_value = "chips", retrigger_type = "mult", colour = G.C.CHIPS }
             },
             
             calc_function = function(card)
@@ -56,7 +51,6 @@ SMODS.Joker {
                         end
                     end
                 end
-                card.joker_display_values.mult = triggers * card.ability.extra.mult
                 card.joker_display_values.chips = triggers * card.ability.extra.chips
             end
         }
