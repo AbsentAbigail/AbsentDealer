@@ -68,7 +68,7 @@ SMODS.Joker {
 
             retrigger_function = function(playing_card, scoring_hand, held_in_hand, joker_card)
                 return held_in_hand
-                    and JokerDisplay.calculate_joker_triggers(joker_card) * joker_card.ability.extra.retrigger
+                    and JokerDisplay.calculate_joker_triggers(joker_card) * joker_card.ability.extra.retriggers
                     or 0
             end
         }
