@@ -1,3 +1,8 @@
+SMODS.current_mod.optional_features = {
+    -- enable additional SMODS contexts that can be CPU intensive
+    cardareas = { discard = true }
+}
+
 SMODS.Atlas({
     key = "modicon",
     path = "modicon.png",
@@ -19,7 +24,24 @@ SMODS.Atlas {
     py = 95
 }
 
+SMODS.Atlas {
+    key = 'Enhancers',
+    path = 'Enhancers.png',
+    px = 71,
+    py = 95
+}
+
+SMODS.Atlas {
+    key = 'Tarots',
+    path = 'Tarots.png',
+    px = 71,
+    py = 95
+}
+
 SMODS.load_file("Utils.lua")()
+
+-- Colours
+ad_sin_colour = HEX("927ad8")
 
 -- Credit Centers
 ad_megamarine_credit = {set = "Other", key = "ad_credit", vars = {"Art", "Megamarine", colours = { HEX("a950c0"), G.C.BLUE}}}
@@ -71,6 +93,18 @@ if SMODS.current_mod.config.debug_jokers then
     -- Debug
     AUtils.Joker("Debuff")
 end
+
+-- Enhancements
+AUtils.Enhancement("Pride")
+AUtils.Enhancement("Envy")
+AUtils.Enhancement("Greed")
+AUtils.Enhancement("Gluttony")
+AUtils.Enhancement("Lust")
+AUtils.Enhancement("Wrath")
+AUtils.Enhancement("Sloth")
+
+-- Consumables
+AUtils.Consumable("Sin")
 
 -- Round based random effects
 

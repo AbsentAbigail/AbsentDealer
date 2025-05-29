@@ -1,9 +1,19 @@
 AUtils = {}
 
 local jokerPath = 'Jokers/'
+local enhancementPath = 'Enhancements/'
+local consumablePath = 'Consumables/'
 
 function AUtils.Joker(joker)
     SMODS.load_file(jokerPath .. joker .. ".lua")()
+end
+
+function AUtils.Enhancement(enhancement)
+    SMODS.load_file(enhancementPath .. enhancement .. ".lua")()
+end
+
+function AUtils.Consumable(consumable)
+    SMODS.load_file(consumablePath .. consumable .. ".lua")()
 end
 
 function AUtils.localize_rank_from_id(id)

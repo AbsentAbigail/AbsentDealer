@@ -3,7 +3,39 @@ return {
         Back = {},
         Blind = {},
         Edition = {},
-        Enhanced = {},
+        Enhanced = {
+            m_ad_pride = {
+                name = 'Prideful Card',
+                text = {"Retrigger once for each", "unique suit in scoring", "hand"}
+            },
+            m_ad_envy = {
+                name = 'Envious Card',
+                text = {"{C:green}#1# in #2#{} chance to create", "a {C:attention}Death{} if this card is held",
+                        "in hand at end of round", "{C:inactive}(Must have room))"}
+            },
+            m_ad_greed = {
+                name = 'Greedy Card',
+                text = {"Lose {C:gold}$#1#{} while this", "card stays in hand", "When played, earn two times",
+                        "the money drained this round", "{C:inactive}(Currently {C:gold}$#2#{C:inactive})}"}
+            },
+            m_ad_gluttony = {
+                name = 'Gluttonous Card',
+                text = {"Permanently gains", "{C:chips}+#1#{} Chips when scored"}
+            },
+            m_ad_lust = {
+                name = 'Lusty Card',
+                text = {"{C:mult}+#1#{} Mult when next", "to two scoring cards", "of a different rank"}
+            },
+            m_ad_wrath = {
+                name = 'Wrathful Card',
+                text = {"{C:green}#1# in #2#{} chance to", "give {X:mult,C:white}X#3#{} Mult", "when scored",
+                        "Always scores when played"}
+            },
+            m_ad_sloth = {
+                name = 'Slothful Card',
+                text = {"{C:chips}+#1#{} Chips", "while this card", "stays in hand"}
+            }
+        },
         Joker = {
             j_ad_alice = {
                 name = 'Alice',
@@ -183,7 +215,12 @@ return {
             }
         },
         Planet = {},
-        Spectral = {},
+        Spectral = {
+            c_ad_sin = {
+                name = "Sin",
+                text = {"Enhances {C:attention}#1#", "selected cards to", "random {C:attention}Sin enhancements{}"}
+            }
+        },
         Stake = {},
         Tag = {},
         Tarot = {},
