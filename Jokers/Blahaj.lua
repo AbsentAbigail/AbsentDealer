@@ -8,8 +8,8 @@ SMODS.Joker {
     cost = 5,
     config = {
         extra = {
-            xMult = 1,
-            xMult_gain = 0.2
+            x_mult = 1,
+            x_mult_gain = 0.2
         }
     },
 
@@ -17,8 +17,8 @@ SMODS.Joker {
         info_queue[#info_queue+1] = G.P_CENTERS.c_trance
         return {
             vars = {
-                center.ability.extra.xMult,
-                center.ability.extra.xMult_gain
+                center.ability.extra.x_mult,
+                center.ability.extra.x_mult_gain
             }
         }
     end,
@@ -50,7 +50,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.joker_main then
             return {
-                xmult = card.ability.extra.xMult,
+                xmult = card.ability.extra.x_mult,
             }
         end
 
@@ -60,11 +60,11 @@ SMODS.Joker {
             end
 
             if context.other_card.seal == 'Blue' then
-                card.ability.extra.xMult = card.ability.extra.xMult + card.ability.extra.xMult_gain
+                card.ability.extra.x_mult = card.ability.extra.x_mult + card.ability.extra.x_mult_gain
 
                 return {
                     message_card = card,
-                    message = card.ability.extra.xMult .. ' Mult'
+                    message = card.ability.extra.x_mult .. ' Mult'
                 }
             end
         end
@@ -73,8 +73,12 @@ SMODS.Joker {
     joker_display_def = function(JokerDisplay) -- Joker Display integration
         return {
             text = {
-                { text = "X" },
-                { ref_table = "card.ability.extra", ref_value = "xMult", retrigger_type = "exp" }
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        { ref_table = "card.ability.extra", ref_value = "x_mult", retrigger_type = "exp" }
+                    }
+                }
             },
             text_config = { colour = G.C.MULT }
         }

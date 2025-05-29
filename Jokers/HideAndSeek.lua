@@ -25,7 +25,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.repetition and context.cardarea == G.hand then
             local debuffed = AUtils.debuffed(context.other_card, card)
-            if not context.other_card.facing == "back" and (next(context.card_effects[1]) or #context.card_effects > 1) then
+            if context.other_card.facing == "back" and (next(context.card_effects[1]) or #context.card_effects > 1) then
                 return {
                     message = localize('k_again_ex'),
                     repetitions = card.ability.extra.retrigger,
