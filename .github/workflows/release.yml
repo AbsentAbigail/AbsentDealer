@@ -15,9 +15,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Create ZIP archive
+      - name: Create ZIP archive with top-level folder
         run: |
-          zip -r absentdealer.zip . -x '*.git*'
+          mkdir absentdealer
+          shopt -s dotglob
+          mv * absentdealer/
+          zip -r absentdealer.zip absentdealer -x 'absentdealer.zip'
+
 
       - name: Generate tag name
         run: echo "RELEASE_TAG=v$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
