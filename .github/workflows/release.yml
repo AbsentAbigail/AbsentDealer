@@ -33,11 +33,11 @@ jobs:
           RELEASE_TAG: ${{ env.RELEASE_TAG }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # ✅ Fetch all tags explicitly to ensure it's available globally
+      # ✅ Fetch all tags to ensure remote tags are available
       - name: Fetch all tags
         run: git fetch --tags
 
-      # ✅ Wait for tag propagation (just in case)
+      # ✅ Wait for tag to propagate (just in case)
       - name: Wait for tag to propagate
         run: sleep 5
 
@@ -45,19 +45,25 @@ jobs:
       - name: Verify tag exists
         run: git tag -l
 
-      # ✅ Create GitHub Release using the tag (ensure we use the correct tag format)
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+      # ✅ Create GitHub Release using the tag
+      - name: Create GitHub Release using actions/create-release
+        uses: actions/create-release@v1
         with:
-          tag_name: ${{ env.RELEASE_TAG }}  # Explicitly pass the tag
-          name: Release ${{ env.RELEASE_TAG }}
+          tag_name: ${{ env.RELEASE_TAG }}
+          release_name: Release ${{ env.RELEASE_TAG }}
+          body: "Release for ${{ env.RELEASE_TAG }}"
+          draft: false
+          prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # ✅ Upload ZIP to release
+      # ✅ Upload ZIP to release using actions/upload-release-asset
       - name: Upload ZIP to release
-        uses: softprops/action-gh-release@v1
+        uses: actions/upload-release-asset@v1
         with:
-          files: ./release.zip  # Explicit file path
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./release.zip
+          asset_name: release.zip
+          asset_content_type: application/zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
