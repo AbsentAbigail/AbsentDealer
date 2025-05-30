@@ -18,9 +18,11 @@ jobs:
       - name: Create ZIP archive with top-level folder
         run: |
           mkdir absentdealer
-          shopt -s dotglob
-          mv ./* ./.* absentdealer/  # This moves both regular files and hidden files
+          shopt -s dotglob extglob
+          # Move all files/folders except .git and .github
+          mv !(absentdealer|.git|.github) absentdealer/
           zip -r absentdealer.zip absentdealer -x 'absentdealer.zip'
+
 
 
 
