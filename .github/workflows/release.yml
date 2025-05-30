@@ -19,8 +19,9 @@ jobs:
         run: |
           mkdir absentdealer
           shopt -s dotglob
-          mv * absentdealer/
+          mv ./* ./.* absentdealer/  # This moves both regular files and hidden files
           zip -r absentdealer.zip absentdealer -x 'absentdealer.zip'
+
 
 
       - name: Generate tag name
