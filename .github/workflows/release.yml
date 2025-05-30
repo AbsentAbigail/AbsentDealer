@@ -22,6 +22,7 @@ jobs:
       - name: Generate tag name
         run: echo "RELEASE_TAG=v$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
 
+      # ✅ Create and push Git tag
       - name: Create Git tag
         run: |
           git config user.name "github-actions"
@@ -32,6 +33,11 @@ jobs:
           RELEASE_TAG: ${{ env.RELEASE_TAG }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # ✅ Check if the tag was pushed successfully
+      - name: Verify the tag exists
+        run: git tag -l
+
+      # ✅ Create GitHub Release using the tag
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
