@@ -18,7 +18,11 @@ SMODS.Joker {
         return {
             vars = {
                 center.ability.extra.x_mult,
-                center.ability.extra.x_mult_gain
+                center.ability.extra.x_mult_gain,
+                colours = {
+                    next(SMODS.find_card('j_ad_blahaj')) and G.C.UI.TEXT_INACTIVE or nil,--and G.C.MULT or nil
+                    next(SMODS.find_card('j_ad_blahaj')) and G.C.UI.TEXT_INACTIVE or G.C.BLUE--and G.C.MULT or nil
+                }
             }
         }
     end,
@@ -79,8 +83,7 @@ SMODS.Joker {
                         { ref_table = "card.ability.extra", ref_value = "x_mult", retrigger_type = "exp" }
                     }
                 }
-            },
-            text_config = { colour = G.C.MULT }
+            }
         }
     end
 }
