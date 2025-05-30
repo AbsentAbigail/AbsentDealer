@@ -54,10 +54,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # ✅ Upload ZIP to release
+      # ✅ Upload ZIP to release with explicit path
       - name: Upload ZIP to release
         uses: softprops/action-gh-release@v1
         with:
-          files: release.zip
+          files: ./release.zip  # Explicit file path
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
