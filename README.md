@@ -14,6 +14,7 @@ Download absentdealer.zip from the [latest release](https://github.com/AbsentAbi
 - 7 card enhancements
 - Supported Languages
 	- English
+	- German
 - Support for [JokerDisplay](https://github.com/nh6574/JokerDisplay)
 
 
