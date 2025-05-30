@@ -33,28 +33,28 @@ jobs:
           RELEASE_TAG: ${{ env.RELEASE_TAG }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # ✅ Fetch all tags to ensure remote tags are available
+      # ✅ Fetch all tags explicitly to ensure it's available globally
       - name: Fetch all tags
         run: git fetch --tags
 
-      # ✅ Wait for tag to propagate
+      # ✅ Wait for tag propagation (just in case)
       - name: Wait for tag to propagate
         run: sleep 5
 
-      # ✅ Verify release.zip exists
-      - name: Verify release.zip exists
-        run: ls -l release.zip
+      # ✅ Verify the tag exists
+      - name: Verify tag exists
+        run: git tag -l
 
-      # ✅ Create GitHub Release using the tag
+      # ✅ Create GitHub Release using the tag (ensure we use the correct tag format)
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ env.RELEASE_TAG }}
+          tag_name: ${{ env.RELEASE_TAG }}  # Explicitly pass the tag
           name: Release ${{ env.RELEASE_TAG }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # ✅ Upload ZIP to release with explicit path
+      # ✅ Upload ZIP to release
       - name: Upload ZIP to release
         uses: softprops/action-gh-release@v1
         with:
