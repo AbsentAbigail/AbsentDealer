@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - master
-      
+
 permissions:
-  contents: write  # Needed to create releases and upload assets
+  contents: write
 
 jobs:
   release:
@@ -19,9 +19,18 @@ jobs:
         run: |
           zip -r release.zip . -x '*.git*'
 
-      - name: Get version from commit or tag
+      - name: Generate tag name
+        run: echo "RELEASE_TAG=v$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
+
+      - name: Create Git tag
         run: |
-          echo "RELEASE_TAG=v$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git tag $RELEASE_TAG
+          git push origin $RELEASE_TAG
+        env:
+          RELEASE_TAG: ${{ env.RELEASE_TAG }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
