@@ -17,7 +17,7 @@ jobs:
 
       - name: Create ZIP archive
         run: |
-          zip -r release.zip . -x '*.git*'
+          zip -r absentdealer.zip . -x '*.git*'
 
       - name: Generate tag name
         run: echo "RELEASE_TAG=v$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
@@ -67,8 +67,8 @@ jobs:
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ./release.zip
-          asset_name: release.zip
+          asset_path: ./absentdealer.zip
+          asset_name: absentdealer.zip
           asset_content_type: application/zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
