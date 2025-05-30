@@ -2,14 +2,14 @@ SMODS.Enhancement {
     key = "wrath",
     atlas = "Enhancers",
     pos = { x = 5, y = 0},
-    weight = 1,
+    weight = ad_sin_weight,
 
     always_scores = true,
 
     config = {
         extra = {
             x_mult = 2,
-            odds = 3
+            odds = 2
         }
     },
 

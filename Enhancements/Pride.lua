@@ -2,7 +2,7 @@ SMODS.Enhancement {
     key = "pride",
     atlas = "Enhancers",
     pos = { x = 0, y = 0},
-    weight = 1,
+    weight = ad_sin_weight,
     
     set_card_type_badge = function(self,card,badges)
         local label = localize({ type = "name_text", set = "Enhanced", key = self.key, vars = {} })

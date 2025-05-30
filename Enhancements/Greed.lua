@@ -2,7 +2,7 @@ SMODS.Enhancement {
     key = "greed",
     atlas = "Enhancers",
     pos = { x = 2, y = 0},
-    weight = 1,
+    weight = ad_sin_weight,
 
     config = {
         extra = {

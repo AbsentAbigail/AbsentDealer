@@ -2,7 +2,7 @@ SMODS.Enhancement {
     key = "sloth",
     atlas = "Enhancers",
     pos = { x = 6, y = 0},
-    weight = 1,
+    weight = ad_sin_weight,
 
     config = {
         h_chips = 40
