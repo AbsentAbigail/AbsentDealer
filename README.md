@@ -1,15 +1,38 @@
-Mod for cute lil plushies and other silly jokers. More to come :3
+# Absent Dealer
 
-Requires [Steamodded](https://github.com/Steamodded/smods). See their installation guide for more information
-
-![image](https://github.com/user-attachments/assets/3df734d9-7ffb-4904-8af4-b6c63bfce88b)
-![image](https://github.com/user-attachments/assets/32ed9b80-f452-4d88-9e0d-b5974b5cd3ff)
+A Balatro mod adding cute plushies and other silly jokers. Also adds a new Spectral Card that creates new enhancements based on the seven deadly sins. Have fun and remember to pet the plushies when they do well :3
 
 
-Supported languages: English
+## Installation
 
-Has support for [JokerDisplay](https://github.com/nh6574/JokerDisplay)
+Requires [Steamodded](https://github.com/Steamodded/smods). See their installation guide for more details
+Download absentdealer.zip from the [latest release](https://github.com/AbsentAbigail/AbsentDealer/releases), extract the contained folder, and place it inside of Balatros mods folder.
 
-Also see [PlushieDeck](https://github.com/AbsentAbigail/PlushieDeck) for a plushie reskin of playing cards
+## Features
+- Over 30 Jokers
+- 1 Spectral Card
+- 7 card enhancements
+- Supported Languages
+	- English
+- Support for [JokerDisplay](https://github.com/nh6574/JokerDisplay)
 
-![image](https://github.com/user-attachments/assets/21556c1f-60ff-4e66-be66-d63b62b372e5)
+
+## Screenshots
+Jokers:
+
+<img src="https://github.com/user-attachments/assets/e946af64-dd48-4333-a883-afd523878696" alt="Jokers page 1" width="600"/>
+<img src="https://github.com/user-attachments/assets/645a96ec-9afb-4124-a32e-5ba80a0aaec4" alt="Jokers page 2" width="600"/>
+<img src="https://github.com/user-attachments/assets/eac10718-7977-435c-9143-6cba29cf1c84" alt="Jokers page 3" width="600"/>
+
+Sin Spectral Card:
+
+<img src="https://github.com/user-attachments/assets/e2d33caa-511f-4729-8dec-52e0451c8c7c" alt="Sin Spectral Card" width="400"/>
+
+Enhancements:
+
+<img src="https://github.com/user-attachments/assets/e3f2212c-5e61-4599-8340-c6fa4cf5d01b" alt="Enhancements" width="400"/>
+
+## Plushie Deck
+Additionally, if you like the plushies, feel free to also check out the [PlushieDeck](https://github.com/AbsentAbigail/PlushieDeck) mod for plushie reskins of the playing cards
+
+<img src="https://github.com/user-attachments/assets/21556c1f-60ff-4e66-be66-d63b62b372e5" alt="Plushie Deck" width="400"/>
