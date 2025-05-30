@@ -21,7 +21,7 @@ jobs:
 
       - name: Generate tag name
         run: echo "RELEASE_TAG=v$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
-
+       
       # ✅ Create and push Git tag
       - name: Create Git tag
         run: |
@@ -33,9 +33,13 @@ jobs:
           RELEASE_TAG: ${{ env.RELEASE_TAG }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # ✅ Check if the tag was pushed successfully
-      - name: Verify the tag exists
-        run: git tag -l
+      # ✅ Fetch all tags to ensure remote tags are available
+      - name: Fetch all tags
+        run: git fetch --tags
+
+      # ✅ Wait for tag to propagate
+      - name: Wait for tag to propagate
+        run: sleep 5
 
       # ✅ Create GitHub Release using the tag
       - name: Create GitHub Release
