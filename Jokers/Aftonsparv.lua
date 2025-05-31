@@ -23,7 +23,7 @@ SMODS.Joker {
     end,
     
     calculate = function(self, card, context)
-        if context.joker_main and G.GAME and AUtils.Contains(primes, G.GAME.current_round.hands_left) then
+        if context.joker_main and G.GAME and AUtils.contains(primes, G.GAME.current_round.hands_left) then
             return {
                 mult = card.ability.extra.mult,
                 chips = card.ability.extra.chips
@@ -43,7 +43,7 @@ SMODS.Joker {
                 { text = "(Prime hands)" }
             },
             calc_function = function(card)
-                local is_prime = G.GAME and AUtils.Contains(primes, G.GAME.current_round.hands_left - 1)
+                local is_prime = G.GAME and AUtils.contains(primes, G.GAME.current_round.hands_left - 1)
                 card.joker_display_values.chips = is_prime and card.ability.extra.chips or 0
                 card.joker_display_values.mult = is_prime and card.ability.extra.mult or 0
             end

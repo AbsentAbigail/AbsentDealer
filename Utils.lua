@@ -1,19 +1,24 @@
 AUtils = {}
 
-local jokerPath = 'Jokers/'
-local enhancementPath = 'Enhancements/'
-local consumablePath = 'Consumables/'
+local joker_path = 'jokers/'
+local enhancement_path = 'enhancements/'
+local consumable_path = 'consumables/'
+local back_path = 'backs/'
 
-function AUtils.Joker(joker)
-    SMODS.load_file(jokerPath .. joker .. ".lua")()
+function AUtils.joker(joker)
+    SMODS.load_file(joker_path .. joker .. ".lua")()
 end
 
-function AUtils.Enhancement(enhancement)
-    SMODS.load_file(enhancementPath .. enhancement .. ".lua")()
+function AUtils.enhancement(enhancement)
+    SMODS.load_file(enhancement_path .. enhancement .. ".lua")()
 end
 
-function AUtils.Consumable(consumable)
-    SMODS.load_file(consumablePath .. consumable .. ".lua")()
+function AUtils.consumable(consumable)
+    SMODS.load_file(consumable_path .. consumable .. ".lua")()
+end
+
+function AUtils.back(back)
+    SMODS.load_file(back_path .. back .. ".lua")()
 end
 
 function AUtils.localize_rank_from_id(id)
@@ -87,8 +92,8 @@ function AUtils.get_suit_count_in_hand(scoring_hand)
     return i
 end
 
-function AUtils.Contains(table, value)
-    for k, v in ipairs(table) do
+function AUtils.contains(table, value)
+    for i, v in ipairs(table) do
         if v == value then
             return true
         end

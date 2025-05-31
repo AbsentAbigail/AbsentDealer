@@ -1,6 +1,33 @@
 return {
     descriptions = {
-        Back = {},
+        Back = {
+            b_ad_royal = {
+                name = "Königliches Deck",
+                text = {
+                    "{C:attention}#1#{} Handgröße",
+                    "Beginne den Durchlauf mit",
+                    "nur Karten mit Rang",
+                    "{C:attention}10 oder höher"
+                }
+            },
+            b_ad_voucher = {
+                name = "Gutschein Deck",
+                text = {
+                    "Erhalte nach dem Besiegen jedes",
+                    "{C:attention}Boss Blinds{}",
+                    "einen {C:attention,T:tag_voucher}#1#{}",
+                }
+            },
+            b_ad_big = {
+                name = "Dickes Deck",
+                text = {
+                    "{C:attention}+#1#{} Joker-Slot",
+                    "",
+                    "Beginne den Durchlauf mit",
+                    "zweimal so vielen Zahlenkarte"
+                }
+            }
+        },
         Blind = {},
         Edition = {},
         Enhanced = {
@@ -212,6 +239,17 @@ return {
             j_ad_patch = {
                 name = "Patch",
                 text = {"Wenn erste {C:attention}poker hand{} der Runde", "nicht gewinnt, verbessere", "ihr level"}
+            },
+            j_ad_kiki = {
+                name = "Kiki",
+                text = {
+                    "Dieser Joker erhält {C:chips}+#2#{} Chips wenn {C:money}Geld{}",
+                    "verdient wird, wird nach der Runde zurückgesetzt",
+                    "{C:inactive}(Momentan {C:chips}+#1#{C:inactive} Chips)",
+                    "{C:inactive}----------",
+                    "{V:1}Beim erhalt, erhalte ein {V:2}Talisman",
+                    "{C:inactive}(Muss Platz haben)"
+                }
             }
         },
         Other = {

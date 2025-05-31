@@ -1,6 +1,33 @@
 return {
     descriptions = {
-        Back = {},
+        Back = {
+            b_ad_royal = {
+                name = "Royal Deck",
+                text = {
+                    "{C:attention}#1#{} hand size",
+                    "Start run with only",
+                    "cards ranked",
+                    "{C:attention}10 or higher"
+                }
+            },
+            b_ad_voucher = {
+                name = "Voucher Deck",
+                text = {
+                    "After defeating each",
+                    "{C:attention}Boss Blind{}, gain a",
+                    "{C:attention,T:tag_voucher}#1#",
+                }
+            },
+            b_ad_big = {
+                name = "Big Deck",
+                text = {
+                    "{C:attention}+#1#{} Joker slot",
+                    "",
+                    "Start run with double",
+                    "numbered cards"
+                }
+            }
+        },
         Blind = {},
         Edition = {},
         Enhanced = {
@@ -212,7 +239,18 @@ return {
             j_ad_patch = {
                 name = "Patch",
                 text = {"If first played {C:attention}poker hand{}", "doesn't beat Blind, upgrade", "its level"}
-            }
+            },
+            j_ad_kiki = {
+                name = "Kiki",
+                text = {
+                    "This joker gains {C:chips}+#2#{} Chips when {C:money}money{}",
+                    "is earned, resets at end of round",
+                    "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
+                    "{C:inactive}----------",
+                    "{V:1}On pickup, gain a {V:2}Talisman",
+                    "{C:inactive}(Must have room)"
+                }
+            },
         },
         Other = {
             ad_credit = {

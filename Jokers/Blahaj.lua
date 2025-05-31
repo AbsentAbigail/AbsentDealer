@@ -20,8 +20,8 @@ SMODS.Joker {
                 center.ability.extra.x_mult,
                 center.ability.extra.x_mult_gain,
                 colours = {
-                    next(SMODS.find_card('j_ad_blahaj')) and G.C.UI.TEXT_INACTIVE or nil,--and G.C.MULT or nil
-                    next(SMODS.find_card('j_ad_blahaj')) and G.C.UI.TEXT_INACTIVE or G.C.BLUE--and G.C.MULT or nil
+                    next(SMODS.find_card('j_ad_blahaj')) and G.C.UI.TEXT_INACTIVE or nil,
+                    next(SMODS.find_card('j_ad_blahaj')) and G.C.UI.TEXT_INACTIVE or G.C.BLUE
                 }
             }
         }
