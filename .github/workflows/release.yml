@@ -3,7 +3,7 @@ name: Create Release on Push to Master
 on:
   push:
     branches:
-      - master
+      - main
 
 permissions:
   contents: write
@@ -22,10 +22,6 @@ jobs:
           # Move all files/folders except .git, .github, and .gitignore
           mv !(absentdealer|.git|.github|.gitignore) absentdealer/
           zip -r absentdealer.zip absentdealer -x 'absentdealer.zip' -x 'absentdealer/.gitignore'
-
-
-
-
 
       - name: Generate tag name
         run: echo "RELEASE_TAG=v$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
