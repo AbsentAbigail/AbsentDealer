@@ -10,6 +10,7 @@ Download absentdealer.zip from the [latest release](https://github.com/AbsentAbi
 
 ## Features
 - Over 30 Jokers
+- 3 new Decks
 - 1 Spectral Card
 - 7 card enhancements
 - Supported Languages
@@ -25,9 +26,18 @@ Jokers:
 <img src="https://github.com/user-attachments/assets/645a96ec-9afb-4124-a32e-5ba80a0aaec4" alt="Jokers page 2" width="600"/>
 <img src="https://github.com/user-attachments/assets/eac10718-7977-435c-9143-6cba29cf1c84" alt="Jokers page 3" width="600"/>
 
+
+Decks:
+
+<img src="https://github.com/user-attachments/assets/a884495f-8c01-4cb3-8813-49a368feb555" alt="Royal Deck" width="600"/>
+<img src="https://github.com/user-attachments/assets/19ecdfae-362e-4fdc-a361-a37e9b44ae66" alt="Voucher Deck" width="600"/>
+<img src="https://github.com/user-attachments/assets/e8941280-96eb-4563-a98e-a0ccb11bd45d" alt="Big Deck" width="600"/>
+
+
 Sin Spectral Card:
 
 <img src="https://github.com/user-attachments/assets/e2d33caa-511f-4729-8dec-52e0451c8c7c" alt="Sin Spectral Card" width="400"/>
+
 
 Enhancements:
 
