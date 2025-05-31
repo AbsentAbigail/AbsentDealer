@@ -1,6 +1,6 @@
 # Absent Dealer
 
-A Balatro mod adding cute plushies and other silly jokers. Also adds a new Spectral Card that creates new enhancements based on the seven deadly sins. Have fun and remember to pet the plushies when they do well :3
+A Balatro mod adding cute plushies and other silly jokers. Also adds new decks and a Spectral Card that creates new enhancements based on the seven deadly sins. Have fun and remember to pet the plushies when they do well :3
 
 
 ## Installation
