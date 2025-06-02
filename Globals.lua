@@ -1,3 +1,6 @@
+-- Talisman compatibility
+to_big = to_big or function(x) return x end
+
 -- variables
 ad_sin_weight = 0.005
 
