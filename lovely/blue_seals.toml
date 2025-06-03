@@ -1,0 +1,24 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+# Replace pattern with payload in card.lua
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "if _planet == 0 then _planet = nil end"
+position = "at"
+payload = '''
+if _planet == 0 then
+_planet = AUtils.contains({
+    "ad_envy",
+    "ad_gluttony",
+    "ad_greed",
+    "ad_lust",
+    "ad_pride",
+    "ad_sloth",
+    "ad_wrath",
+}, G.GAME.last_hand_played) and "c_ad_rhea" or nil end
+'''
+match_indent = true
+times = 1

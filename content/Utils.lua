@@ -4,6 +4,7 @@ local joker_path = 'jokers/'
 local enhancement_path = 'enhancements/'
 local consumable_path = 'consumables/'
 local back_path = 'backs/'
+local hand_path = 'hands/'
 
 function AUtils.joker(joker)
     SMODS.load_file(joker_path .. joker .. ".lua")()
@@ -19,6 +20,16 @@ end
 
 function AUtils.back(back)
     SMODS.load_file(back_path .. back .. ".lua")()
+end
+
+function AUtils.hand(hand)
+    SMODS.load_file(hand_path .. hand .. ".lua")()
+end
+
+function AUtils.hand_level_colour(level)
+    return to_big(level) == to_big(1)
+        and G.C.UI.TEXT_DARK
+        or G.C.HAND_LEVELS[to_big(math.min(7, level)):to_number()]
 end
 
 function AUtils.localize_rank_from_id(id)

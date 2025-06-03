@@ -26,6 +26,14 @@ return {
                     "Beginne den Durchlauf mit",
                     "zweimal so vielen Zahlenkarte"
                 }
+            },
+            b_ad_sinner = {
+                name = "Deck des Sünders",
+                text = {
+                    "Beginne den Durchlauf mit",
+                    "zufälligen {C:attention}Sünden verbesserungen",
+                    "auf allen Karten"
+                }
             }
         },
         Blind = {},
@@ -258,7 +266,26 @@ return {
                 text = {"{V:1}#1#: {V:2}#2#"}
             }
         },
-        Planet = {},
+        Planet = {
+            c_ad_asteroid_belt = {
+                name = "Asteroiden Gürtel",
+                text = {
+                    "{S:0.8}({S:0.8,V:1}Lvl.#1#{S:0.8}){} Aufwertung für",
+                    "{C:attention}#2#",
+                    "{C:mult}+#3#{} Mult und",
+                    "{C:chips}+#4#{} Chips",
+                },
+            },
+            c_ad_rhea = {
+                name = "Rhea",
+                text = {
+                    "{S:0.8}({S:0.8,V:1}Lvl.#1#{S:0.8}){} Aufwertung für",
+                    "{C:attention}Sünden Hände",
+                    "{C:mult}+#3#{} Mult und",
+                    "{C:chips}+#4#{} Chips",
+                },
+            },
+        },
         Spectral = {
             c_ad_sin = {
                 name = "Sin",
@@ -276,11 +303,49 @@ return {
         blind_states = {},
         challenge_names = {},
         collabs = {},
-        dictionary = {},
+        dictionary = {
+            ad_planet_moon = "Mond",
+            ad_planet_not_planet = "Kein Planet",
+            ad_sin_hands = "Sünden Hände",
+        },
         high_scores = {},
         labels = {},
-        poker_hand_descriptions = {},
-        poker_hands = {},
+        poker_hand_descriptions = {
+            ad_wrath = {
+                "Fünf Zorn Karten"
+            },
+            ad_gluttony = {
+                "Fünf Völlerei Karten"
+            },
+            ad_envy = {
+                "Fünf Neid Karten"
+            },
+            ad_greed = {
+                "Fünf Gier Karten"
+            },
+            ad_sloth = {
+                "Fünf Faule Karten"
+            },
+            ad_pride = {
+                "Fünf Stolz Karten"
+            },
+            ad_lust = {
+                "Fünf Lust Karten"
+            },
+            ad_rockandroll = {
+                "Fünf Stein Karten"
+            }
+        },
+        poker_hands = {
+            ad_wrath = "Angy",
+            ad_envy = "Jelly",
+            ad_gluttony = "Yummy",
+            ad_greed = "Munny",
+            ad_lust = "Needy",
+            ad_pride = "Gay",
+            ad_sloth = "Eepy",
+            ad_rockandroll = "Rock and Roll",
+        },
         quips = {},
         ranks = {},
         suits_plural = {},

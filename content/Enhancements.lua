@@ -1,0 +1,7 @@
+AUtils.enhancement("Pride")
+AUtils.enhancement("Envy")
+AUtils.enhancement("Greed")
+AUtils.enhancement("Gluttony")
+AUtils.enhancement("Lust")
+AUtils.enhancement("Wrath")
+AUtils.enhancement("Sloth")
