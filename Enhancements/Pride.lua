@@ -24,7 +24,7 @@ SMODS.Enhancement {
 
         local suits = AUtils.get_suit_count_in_hand(context.scoring_hand)
         
-        return {
+        return suits > 0 and {
             message = localize('k_again_ex'),
             repetitions = suits,
             card = card
