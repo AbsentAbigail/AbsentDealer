@@ -17,7 +17,7 @@ SMODS.Consumable {
     set = "Spectral",
     atlas = "Tarots",
     pos = { x = 0, y = 0 },
-    cost = 3,
+    cost = 4,
 
     config = {
         max_highlighted = 3
@@ -30,7 +30,7 @@ SMODS.Consumable {
             }
         }
     end,
-    
+
     can_use = function(self, card)
         local highlighted = G.hand.highlighted
         if highlighted and #highlighted > 0 and #highlighted <= card.ability.max_highlighted then

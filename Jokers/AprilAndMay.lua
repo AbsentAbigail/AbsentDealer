@@ -59,7 +59,7 @@ SMODS.Joker {
             end
             if #matching_cards > 0 then 
                 return {
-                    message = "Mult!"
+                    message = localize("ad_mult")
                 }
             end
         end

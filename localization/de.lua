@@ -290,7 +290,15 @@ return {
             c_ad_sin = {
                 name = "Sin",
                 text = {"Verbessere {C:attention}#1#", "ausgewählte Karten zu", "zufälligen {C:attention}Sünden verbesserungen{}"}
-            }
+            },
+            c_ad_chance = {
+                name = "Chance",
+                text = {
+                    "Verdoppelt alle {C:attention}aufgelisteten",
+                    "{C:green,E:1,S:1.1}Wahrscheinlichkeiten",
+                    "Verliere {C:gold}$#1#"
+                }
+            },
         },
         Stake = {},
         Tag = {},

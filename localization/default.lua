@@ -258,6 +258,32 @@ return {
                     "{C:inactive}(Must have room)"
                 }
             },
+            j_ad_dysphoria_hoodie = {
+                name = "Dysphoria Hoodie",
+                text = {
+                    "When blind is selected",
+                    "reduce scoring requirement",
+                    "by {C:attention}#1#%{}, plus {C:attention}#2#%",
+                    "when blind is defeated"
+                }
+            },
+            j_ad_puppo = {
+                name = "Puppo",
+                text = {
+                    "When blind is selected",
+                    "draw {C:attention}#1#{} cards, doubled",
+                    "during {C:attention}Boss Blind"
+                }
+            },
+            j_ad_roommates = {
+                name = "Roommates",
+                text = {
+                    "If played hand contains",
+                    "at least two {C:attention}Prideful{} cards,",
+                    "they give {C:gold}+$#1#{}, {X:mult,C:white}X#2#{} Mult, and {C:chips}+#3#{} Chips",
+                    "when scored"
+                }
+            },
         },
         Other = {
             ad_credit = {
@@ -290,6 +316,15 @@ return {
                 name = "Sin",
                 text = {"Enhances {C:attention}#1#", "selected cards to", "random {C:attention}Sin enhancements{}"}
             },
+            c_ad_chance = {
+                name = "Chance",
+                text = {
+                    "Double all {C:attention}listed",
+                    "{C:green,E:1,S:1.1}probabilities",
+                    "Lose {C:gold}$#1#",
+                    "{C:inactive}(ex: {C:green}2 in 4{C:inactive} -> {C:green}4 in 4{C:inactive})"
+                }
+            },
         },
         Stake = {},
         Tag = {},
@@ -306,6 +341,7 @@ return {
             ad_planet_moon = "Moon",
             ad_planet_not_planet = "Not a planet",
             ad_sin_hands = "Sin Hands",
+            ad_covered = "Covered up!"
         },
         high_scores = {},
         labels = {},
