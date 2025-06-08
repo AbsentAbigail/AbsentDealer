@@ -43,7 +43,7 @@ SMODS.Joker {
                     end
                 }))
                 return {
-                    message = "Opened!"
+                    message = localize("ad_opened")
                 }
             end
         end

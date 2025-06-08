@@ -44,7 +44,7 @@ SMODS.Joker {
             SMODS.modify_rank(second_Scoring_card, second_diff)
 
             return {
-                message = "Crowned!"
+                message = localize("ad_crowned")
             }
         end
     end,

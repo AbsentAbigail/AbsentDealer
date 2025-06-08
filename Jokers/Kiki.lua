@@ -33,7 +33,7 @@ SMODS.Joker {
 
         G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
         SMODS.calculate_effect({
-            message = "Hatched",
+            message = localize("ad_hatched"),
             message_card = card,
             func = function() -- This is for timing purposes, everything here runs after the message
                 G.E_MANAGER:add_event(Event {

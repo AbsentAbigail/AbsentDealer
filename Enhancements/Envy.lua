@@ -42,7 +42,7 @@ SMODS.Enhancement {
         G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
         
         return {
-            message = "Envy",
+            message = localize("ad_envy"),
             message_card = card,
             func = function()
                 G.E_MANAGER:add_event(Event {

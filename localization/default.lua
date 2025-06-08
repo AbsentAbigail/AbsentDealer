@@ -284,11 +284,25 @@ return {
                     "when scored"
                 }
             },
+            j_ad_obsidian = {
+                name = "Obsidian Joker",
+                text = {
+                    "Played {C:attention}Stone{} cards",
+                    "become {C:dark_edition}Negative"
+                }
+            },
         },
         Other = {
             ad_credit = {
                 name = "Credit",
                 text = {"{V:1}#1#: {V:2}#2#"}
+            },
+            ad_gray_seal = {
+                name = "Gray Seal",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult when",
+                    "scored or held in hand"
+                }
             }
         },
         Planet = {
@@ -341,10 +355,22 @@ return {
             ad_planet_moon = "Moon",
             ad_planet_not_planet = "Not a planet",
             ad_sin_hands = "Sin Hands",
-            ad_covered = "Covered up!"
+            ad_covered = "Covered up!",
+            ad_obsidian = "Obsidian!",
+            ad_envy = "Envy",
+            ad_trans = "Trans!",
+            ad_mult = "Mult!",
+            ad_crowned = "Crowned!",
+            ad_crystallised = "Crystallised!",
+            ad_hatched = "Hatched",
+            ad_opened = "Opened!",
+            ad_deja_vu = "Déjà-vu",
+            ad_doubled = "Doubled!",
         },
         high_scores = {},
-        labels = {},
+        labels = {
+            ad_gray_seal = "Gray Seal"
+        },
         poker_hand_descriptions = {
             ad_wrath = {
                 "Five wrath cards"

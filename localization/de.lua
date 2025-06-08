@@ -258,12 +258,52 @@ return {
                     "{V:1}Beim erhalt, erhalte ein {V:2}Talisman",
                     "{C:inactive}(Muss Platz haben)"
                 }
-            }
+            },
+            j_ad_dysphoria_hoodie = {
+                name = "Dysphorie Hoodie",
+                text = {
+                    "Wenn Blind ausgewählt wird,",
+                    "reduziere die benötigten Chips",
+                    "um {C:attention}#1#%{}, plus {C:attention}#2#%",
+                    "wenn ein Blind besiegt wird"
+                }
+            },
+            j_ad_puppo = {
+                name = "Puppo",
+                text = {
+                    "Ziehe {C:attention}#1#{} Karten, wenn",
+                    "ein Blind ausgewählt wird. Während",
+                    "des {C:attention}Boss Blind{} verdoppelt"
+                }
+            },
+            j_ad_roommates = {
+                name = "Zweck WG",
+                text = {
+                    "Wenn Hand mindestens zwei",
+                    "{C:attention}Stolz{} Karten enthält,",
+                    "bringen sie {C:gold}+$#1#{}, {X:mult,C:white}X#2#{} Mult, and {C:chips}+#3#{} Chips",
+                    "wenn gezählt"
+                }
+            },
+            j_ad_obsidian = {
+                name = "Obsidian Joker",
+                text = {
+                    "Gespielte {C:attention}Stone{} Karten",
+                    "werden {C:dark_edition}Negativ"
+                }
+            },
         },
         Other = {
             ad_credit = {
                 name = "Credit",
                 text = {"{V:1}#1#: {V:2}#2#"}
+            },
+            ad_gray_seal = {
+                name = "Graues Siegel",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult wenn",
+                    "gezählt oder in der Hand gehalten"
+                }
             }
         },
         Planet = {
@@ -315,9 +355,22 @@ return {
             ad_planet_moon = "Mond",
             ad_planet_not_planet = "Kein Planet",
             ad_sin_hands = "Sünden Hände",
+            ad_covered = "Angezogen!",
+            ad_obsidian = "Obsidian!",
+            ad_envy = "Neid",
+            ad_trans = "Trans!",
+            ad_mult = "Mult!",
+            ad_crowned = "Gekrönt!",
+            ad_crystallised = "Kristalisiert!",
+            ad_hatched = "Geschlüpft",
+            ad_opened = "Geöffnet!",
+            ad_deja_vu = "Déjà-vu",
+            ad_doubled = "Verdoppelt!",
         },
         high_scores = {},
-        labels = {},
+        labels = {
+            ad_gray_seal = "Graues Siegel"
+        },
         poker_hand_descriptions = {
             ad_wrath = {
                 "Fünf Zorn Karten"

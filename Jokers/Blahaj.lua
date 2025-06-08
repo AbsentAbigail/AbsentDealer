@@ -34,7 +34,7 @@ SMODS.Joker {
 
         G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
         SMODS.calculate_effect({
-            message = "Trans!",
+            message = localize("ad_trans"),
             message_card = card,
             func = function() -- This is for timing purposes, everything here runs after the message
                 G.E_MANAGER:add_event(Event {

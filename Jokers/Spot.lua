@@ -34,7 +34,7 @@ SMODS.Joker {
             extra.xmult = extra.xmult * 2
             return 
             {
-                message = "Doubled!",
+                message = localize("ad_doubled"),
                 colour = G.C.INACTIVE,
                 message_card = card
             }

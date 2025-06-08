@@ -26,6 +26,7 @@ AUtils.joker("Kiki")
 AUtils.joker("DysphoriaHoodie")
 AUtils.joker("Puppo")
 AUtils.joker("Roommates")
+AUtils.joker("Obsidian")
 
 -- Rare Jokers
 AUtils.joker("Catcitten")
