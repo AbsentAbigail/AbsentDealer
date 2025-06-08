@@ -41,8 +41,7 @@ SMODS.Joker {
             end
             if #matching_cards > 0 then 
                 return {
-                    message = "Crystallised!",
-                    card = self
+                    message = localize("ad_crystallised")
                 }
             end
         end

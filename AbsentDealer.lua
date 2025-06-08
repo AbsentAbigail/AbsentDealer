@@ -24,3 +24,6 @@ SMODS.load_file(path .. "Decks.lua")()
 
 -- Hands
 SMODS.load_file(path .. "Hands.lua")()
+
+-- Seals
+SMODS.load_file(path .. "Seals.lua")()

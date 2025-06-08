@@ -40,7 +40,7 @@ SMODS.Joker {
 
         return {
             remove = true,
-            message = "Déjà-vu",
+            message = localize("ad_deja_vu"),
             message_card = destroying_card,
             func = function()
                 G.E_MANAGER:add_event(Event {
