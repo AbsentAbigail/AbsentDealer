@@ -22,6 +22,15 @@ SMODS.Joker {
         }
     end,
 
+    in_pool = function(self, args)
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, source_enhancement) then
+                return true
+            end
+        end
+        return false
+    end,
+    
     calculate = function(self, card, context)
         if context.blueprint then
             return
