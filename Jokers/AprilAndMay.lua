@@ -59,8 +59,7 @@ SMODS.Joker {
             end
             if #matching_cards > 0 then 
                 return {
-                    message = "Mult!",
-                    card = self
+                    message = "Mult!"
                 }
             end
         end

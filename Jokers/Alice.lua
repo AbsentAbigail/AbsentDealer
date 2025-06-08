@@ -31,6 +31,10 @@ SMODS.Joker {
             }
         end
 
+        if context.blueprint then
+            return
+        end
+
         if context.before then
             local ret = nil
             if card.ability.extra.poker_hand and context.scoring_name ~= card.ability.extra.poker_hand then

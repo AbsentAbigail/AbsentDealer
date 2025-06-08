@@ -1,5 +1,3 @@
-local to_big = to_big or function(x) return x end -- Talisman compatibility
-
 local function balance()
     local total = hand_chips + mult
     hand_chips = math.floor(total/2)

@@ -3,27 +3,24 @@ SMODS.current_mod.optional_features = {
     cardareas = { discard = true }
 }
 
-SMODS.load_file("Atlas.lua")()
-SMODS.load_file("Utils.lua")()
-SMODS.load_file("Globals.lua")()
-SMODS.load_file("Hooks.lua")()
+local path = "content/"
+
+SMODS.load_file(path .. "Utils.lua")()
+SMODS.load_file(path .. "Atlas.lua")()
+SMODS.load_file(path .. "Globals.lua")()
+SMODS.load_file(path .. "Hooks.lua")()
 
 -- Jokers
-SMODS.load_file("Jokers.lua")()
+SMODS.load_file(path .. "Jokers.lua")()
 
 -- Enhancements
-AUtils.enhancement("Pride")
-AUtils.enhancement("Envy")
-AUtils.enhancement("Greed")
-AUtils.enhancement("Gluttony")
-AUtils.enhancement("Lust")
-AUtils.enhancement("Wrath")
-AUtils.enhancement("Sloth")
+SMODS.load_file(path .. "Enhancements.lua")()
 
 -- Consumables
-AUtils.consumable("Sin")
+SMODS.load_file(path .. "Consumables.lua")()
 
 -- Decks
-AUtils.back("Royal")
-AUtils.back("Voucher")
-AUtils.back("Big")
+SMODS.load_file(path .. "Decks.lua")()
+
+-- Hands
+SMODS.load_file(path .. "Hands.lua")()

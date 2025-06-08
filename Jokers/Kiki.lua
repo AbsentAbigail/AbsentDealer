@@ -1,5 +1,3 @@
-local to_big = to_big or function(x) return x end -- Talisman compatibility
-
 SMODS.Joker {
     key = 'kiki',
     atlas = 'Jokers',

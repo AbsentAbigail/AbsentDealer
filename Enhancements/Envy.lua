@@ -27,7 +27,7 @@ SMODS.Enhancement {
 
     calculate = function(self, card, context)
         local extra = card.ability.extra
-        if not (context.end_of_round and context.cardarea == G.hand) then
+        if not (context.end_of_round and context.individual and context.cardarea == G.hand) then
             return
         end
 
