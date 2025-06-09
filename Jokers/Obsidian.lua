@@ -14,7 +14,7 @@ SMODS.Joker {
     },
 
     loc_vars = function(self, info_queue, center)
-        info_queue[#info_queue+1] = G.P_CENTERS[source_enhancement]
+        info_queue[#info_queue + 1] = G.P_CENTERS[source_enhancement]
         info_queue[#info_queue + 1] = { key = 'e_negative_playing_card', set = 'Edition', config = { extra = 1 } }
         return {
             vars = {

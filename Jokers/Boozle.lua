@@ -26,8 +26,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
         local scoring_card = context.other_card
-        if context.repetition and scoring_card and context.cardarea == G.play or context.cardarea == G.hand then
-            
+        if context.repetition and scoring_card and (context.cardarea == G.play or context.cardarea == G.hand) then
             if not scoring_card:is_suit(suit, nil, nil) then
                 return
             end

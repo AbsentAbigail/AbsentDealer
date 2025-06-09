@@ -2,6 +2,7 @@ SMODS.Seal {
     key = "gray",
     atlas = "Enhancers",
     pos = { x = 4, y = 1 },
+    badge_colour = HEX("6d6d6d"),
 
     config = {
         extra = {
@@ -12,7 +13,7 @@ SMODS.Seal {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                self.config.extra.retriggers
+                self.config.extra.x_mult
             }
         }
     end,
