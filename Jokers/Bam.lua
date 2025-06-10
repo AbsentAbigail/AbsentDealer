@@ -7,9 +7,9 @@ SMODS.Joker {
     cost = 6,
     config = {
         extra = {
-            xchips_base = 1.1,
-            xchips = 1.1,
-            xchips_gain = 0.1
+            x_chips_base = 1.1,
+            x_chips = 1.1,
+            x_chips_gain = 0.1
         }
     },
 
@@ -17,8 +17,8 @@ SMODS.Joker {
         info_queue[#info_queue+1] = G.P_CENTERS.m_bonus
         return {
             vars = {
-                center.ability.extra.xchips,
-                center.ability.extra.xchips_gain,
+                center.ability.extra.x_chips,
+                center.ability.extra.x_chips_gain,
             }
         }
     end,
@@ -33,20 +33,20 @@ SMODS.Joker {
                 return
             end
 
-            local xchips = extra.xchips
+            local x_chips = extra.x_chips
 
             if not context.blueprint then
-                extra.xchips = extra.xchips + extra.xchips_gain
+                extra.x_chips = extra.x_chips + extra.x_chips_gain
             end
             
             return {
-                xchips = xchips
+                xchips = x_chips
             }
         end
 
         if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-            if extra.xchips > extra.xchips_base then
-                extra.xchips = extra.xchips_base
+            if extra.x_chips > extra.x_chips_base then
+                extra.x_chips = extra.x_chips_base
                 return {
                     message = localize('k_reset'),
                     colour = G.C.RED
@@ -67,10 +67,14 @@ SMODS.Joker {
     joker_display_def = function(JokerDisplay) -- Joker Display integration
         return {
             text = {
-                { text = "X" },
-                { ref_table = "card.joker_display_values", ref_value = "xchips", retrigger_type = "exp" },
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        { ref_table = "card.joker_display_values", ref_value = "x_chips", retrigger_type = "exp" }
+                    },
+                    border_colour = G.C.CHIPS
+                }
             },
-            text_config = { colour = G.C.CHIPS },
 
             reminder_text = {
                 { text = "(Bonus Cards)" }
@@ -81,7 +85,7 @@ SMODS.Joker {
                 local extra = card.ability.extra
 
                 if text == 'Unknown' then
-                    card.joker_display_values.xchips = 1
+                    card.joker_display_values.x_chips = 1
                     return
                 end
 
@@ -93,12 +97,12 @@ SMODS.Joker {
                     end
                 end
 
-                local xchips = 1
+                local x_chips = 1
                 while bonus_cards > 0 do
-                    xchips = xchips * (extra.xchips + extra.xchips_gain * (bonus_cards - 1))
+                    x_chips = x_chips * (extra.x_chips + extra.x_chips_gain * (bonus_cards - 1))
                     bonus_cards = bonus_cards - 1
                 end
-                card.joker_display_values.xchips = xchips
+                card.joker_display_values.x_chips = x_chips
             end
         }
     end
