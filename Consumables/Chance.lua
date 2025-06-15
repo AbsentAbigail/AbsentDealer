@@ -26,7 +26,8 @@ SMODS.Consumable {
     loc_vars = function(self, info_queue, center)
         return {
             vars = {
-                G.GAME.ad_chance_cost or base_cost
+                G.GAME.ad_chance_cost or base_cost,
+                G.GAME.probabilities.normal
             }
         }
     end,

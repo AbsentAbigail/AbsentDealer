@@ -1,0 +1,26 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+# Replace pattern with payload in card.lua
+# Increase max_highlighted Consumables to use WitchHat modifier
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "self.ability.consumeable.mod_num = math.min(5, self.ability.consumeable.max_highlighted)"
+position = "after"
+payload = '''
+if self.ability.set == "Tarot" then
+    self.ability.consumeable.mod_num = math.min(G.hand and G.hand.config.highlighted_limit or 5, self.ability.consumeable.mod_num + (G.GAME.ad_max_highlight_modifier or 0))
+end
+'''
+match_indent = true
+
+# Replace pattern with payload in common_events.lua
+[[patches]]
+[patches.regex]
+target = "functions/common_events.lua"
+pattern = "(?<indent>[\t ]*)(?<part1>elseif _c.name == \".+\" then loc_vars.+)(?<max_highlighted>cfg.max_highlighted)(?<rest>.*)$"
+line_prepend = '$indent'
+position = "at"
+payload = '''$part1$max_highlighted + (G.GAME.ad_max_highlight_modifier or 0)$rest'''

@@ -1,0 +1,31 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "local nu_chip, nu_mult = G.GAME.selected_back:trigger_effect{context = 'final_scoring_step', chips = hand_chips, mult = mult}"
+position = "after"
+payload = '''
+if G.GAME.ad_halve_scoring then
+    local x_mult = 0.5 ^ G.GAME.ad_halve_scoring
+    nu_mult = (nu_mult or mult) * x_mult
+    update_hand_text({delay = 0}, { mult = nu_mult })
+    
+    G.E_MANAGER:add_event(Event {
+        func = function()
+            local text = localize({ type = "variable", key = "ad_cracked", vars = { x_mult } })
+            play_sound('glass'..math.random(1, 6), math.random()*0.2 + 0.9,0.5)
+            play_sound('tarot1', 1.5)
+            attention_text({
+                scale = 1.4, text = text, hold = 2, align = 'cm', offset = {x = 0, y = -2.7}, major = G.play
+            })
+            return true
+        end
+    })
+    delay(0.6)
+end
+'''
+match_indent = true
+times = 1

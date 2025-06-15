@@ -39,6 +39,7 @@ AUtils.joker("AprilAndMay")
 AUtils.joker("Elsta")
 AUtils.joker("ShadyBox")
 AUtils.joker("Patch")
+AUtils.joker("WitchHat")
 
 -- Legendary Jokers
 AUtils.joker("Sherba")
