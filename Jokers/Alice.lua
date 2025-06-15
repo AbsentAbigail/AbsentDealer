@@ -8,7 +8,7 @@ SMODS.Joker {
     cost = 3,
     config = {
         extra = {
-            chip_mod = 10,
+            chip_mod = 5,
             chips = 0,
             poker_hand = nil
         }
