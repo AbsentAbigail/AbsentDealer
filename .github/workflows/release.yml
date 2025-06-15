@@ -30,7 +30,7 @@ jobs:
           zip -r absentdealer.zip absentdealer -x 'absentdealer.zip' -x 'absentdealer/.gitignore'
 
       - name: Generate tag name
-        run: echo "RELEASE_TAG=v${{ steps.get_version.outputs.version }}"
+        run: echo "RELEASE_TAG=v${{ steps.get_version.outputs.version }}" >> $GITHUB_ENV
 
       - name: Create Git tag
         run: |
