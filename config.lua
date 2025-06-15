@@ -1,3 +1,4 @@
 return {
-	["debug_jokers"] = false
+	["debug_jokers"] = false,
+	["debug_hotkey"] = false,
 }

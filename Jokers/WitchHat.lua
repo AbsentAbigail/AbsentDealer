@@ -1,9 +1,12 @@
+local mod = 1
+
 SMODS.Joker {
     key = 'witch_hat',
     atlas = 'Jokers',
-    pos = {x = 2, y = 1},
+    pos = {x = 4, y = 4},
+    soul_pos = {x = 5, y = 4},
     blueprint_compat = false,
-    rarity = 1,
+    rarity = 3,
     cost = 5,
     config = {
         extra = {
@@ -11,33 +14,20 @@ SMODS.Joker {
     },
     
     loc_vars = function(self, info_queue, center)
+        info_queue[#info_queue + 1] = ad_liber_credit
         return {
             vars = {
+                G.GAME.ad_max_highlight_modifier or 0
             }
         }
     end,
 
     add_to_deck = function(self, card, from_debuff)
-        for _, card in ipairs(G.consumeables.cards) do
-            if card.ability and card.ability.set and card.ability.set == "Tarot" then
-                local config = card.ability
-                if config.max_highlighted then
-                    config.max_highlighted = config.max_highlighted + 1
-                    config.ad_witch_modified = config.ad_witch_modified and config.ad_witch_modified + 1 or 1
-                end
-            end
-        end
+        G.GAME.ad_max_highlight_modifier = (G.GAME.ad_max_highlight_modifier or 0) + mod
     end,
     remove_from_deck = function(self, card, from_debuff)
-        for _, card in ipairs(G.consumeables.cards) do
-            local config = card.ability
-            if card.set and card.set == "Tarot" and config.ad_witch_modified then
-                if config.max_highlighted then
-                    config.max_highlighted = config.max_highlighted - config.ad_witch_modified
-                    config.ad_witch_modified = nil
-                end
-            end
-        end
+        local current_mod = G.GAME.ad_max_highlight_modifier
+        G.GAME.ad_max_highlight_modifier = current_mod and (current_mod - mod) or 0
     end,
 
     joker_display_def = function(JokerDisplay) -- Joker Display integration
@@ -45,17 +35,3 @@ SMODS.Joker {
         }
     end
 }
-
-local create_card_reference = create_card
-function create_card(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
-    print("Created")
-	local ret = create_card_reference(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
-    local hats = SMODS.find_card("j_ad_witch_hat")
-    print("Hats: " .. #hats)
-    if next(hats) and ret.ability and ret.ability.set == "Tarot" and ret.ability.max_highlighted then
-        print("do it")
-        ret.ability.max_highlighted = ret.ability.max_highlighted + #hats
-        ret.ability.ad_witch_modified = #hats
-    end
-	return ret
-end

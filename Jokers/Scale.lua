@@ -28,7 +28,7 @@ SMODS.Joker {
         local discards = G.GAME.current_round.discards_left or 0
 
         local difference = to_big(hands - discards)
-            card.children.floating_sprite:set_sprite_pos({x = 0, y = 1})
+        card.children.floating_sprite:set_sprite_pos({x = 0, y = 1})
         if difference == to_big(0) then
             card.children.floating_sprite:set_sprite_pos({x = 2, y = 1})
             center.pos.x = 2

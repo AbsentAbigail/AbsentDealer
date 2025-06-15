@@ -292,6 +292,13 @@ return {
                     "werden {C:dark_edition}Negativ"
                 }
             },
+            j_ad_witch_hat = {
+                name = "Hexenhut",
+                text = {
+                    "{C:tarot}Tarot Karten{} können {C:attention}eine",
+                    "{C:legendary}weitere Karte auswählen"
+                }
+            },
         },
         Other = {
             ad_credit = {
@@ -336,12 +343,34 @@ return {
                 text = {
                     "Verdoppelt alle {C:attention}aufgelisteten",
                     "{C:green,E:1,S:1.1}Wahrscheinlichkeiten",
-                    "Verliere {C:gold}$#1#"
+                    "Verliere {C:gold}$#1#",
+                    "{C:inactive}(bsp: {C:green}2-zu-4{C:inactive} -> {C:green}4-zu-4{C:inactive})",
+                    "{C:inactive}(Aktuell {C:green}#2#-zu-X{C:inactive})"
                 }
             },
         },
         Stake = {},
-        Tag = {},
+        Tag = {
+            tag_ad_copy = {
+                name = "Kopier-Tag",
+                text = {
+                    "Erstelle eine Kopie eines",
+                    "zufälligen {C:attention}Joker",
+                    "Setzt das {C:money}Geld{} auf {C:money}$0",
+                    "{C:inactive}(Muss Platz haben)"
+                }
+            },
+            tag_ad_cracked_mirror = {
+                name = "Gebrochener Spigel-Tag",
+                text = {
+                    "Erstelle eine Kopie des",
+                    "{C:attention}Joker{} ganz links",
+                    "Erhalte permanent {X:mult,C:white}X0.5{} Mult",
+                    "auf gespielte Hände",
+                    "{C:inactive}(Muss Platz haben)"
+                }
+            },
+        },
         Tarot = {},
         Voucher = {}
     },
@@ -412,7 +441,9 @@ return {
         suits_plural = {},
         suits_singular = {},
         tutorial = {},
-        v_dictionary = {},
+        v_dictionary = {
+            ad_cracked = "Gesplittert! X#1#"
+        },
         v_text = {}
     }
 }

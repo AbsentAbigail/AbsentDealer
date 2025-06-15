@@ -6,6 +6,7 @@ local consumable_path = 'consumables/'
 local back_path = 'backs/'
 local hand_path = 'hands/'
 local seal_path = 'seals/'
+local tag_path = 'tags/'
 
 function AUtils.joker(joker)
     SMODS.load_file(joker_path .. joker .. ".lua")()
@@ -29,6 +30,10 @@ end
 
 function AUtils.seal(seal)
     SMODS.load_file(seal_path .. seal .. ".lua")()
+end
+
+function AUtils.tag(tag)
+    SMODS.load_file(tag_path .. tag .. ".lua")()
 end
 
 function AUtils.hand_level_colour(level)
