@@ -15,6 +15,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Read version from AbsentDealer.json
+        id: get_version
+        run: |
+          VERSION=$(jq -r .version AbsentDealer.json)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
       - name: Create ZIP archive with top-level folder
         run: |
           mkdir absentdealer
@@ -24,9 +30,8 @@ jobs:
           zip -r absentdealer.zip absentdealer -x 'absentdealer.zip' -x 'absentdealer/.gitignore'
 
       - name: Generate tag name
-        run: echo "RELEASE_TAG=v$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
+        run: echo "RELEASE_TAG=v${{ steps.get_version.outputs.version }}
 
-      # ✅ Create and push Git tag
       - name: Create Git tag
         run: |
           git config user.name "github-actions"
@@ -37,19 +42,15 @@ jobs:
           RELEASE_TAG: ${{ env.RELEASE_TAG }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # ✅ Fetch all tags to ensure remote tags are available
       - name: Fetch all tags
         run: git fetch --tags
 
-      # ✅ Wait for tag to propagate (just in case)
       - name: Wait for tag to propagate
         run: sleep 5
 
-      # ✅ Verify the tag exists
       - name: Verify tag exists
         run: git tag -l
 
-      # ✅ Create GitHub Release using actions/create-release
       - name: Create GitHub Release using actions/create-release
         id: create_release
         uses: actions/create-release@v1
@@ -62,11 +63,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # ✅ Get the upload URL from the create-release step output
       - name: Get upload URL
         run: echo "UPLOAD_URL=${{ steps.create_release.outputs.upload_url }}" >> $GITHUB_ENV
 
-      # ✅ Upload ZIP to release using actions/upload-release-asset
       - name: Upload ZIP to release
         uses: actions/upload-release-asset@v1
         with:
