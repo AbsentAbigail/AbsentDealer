@@ -370,6 +370,22 @@ return {
                     "{C:inactive}(Muss Platz haben)"
                 }
             },
+            tag_ad_balance = {
+                name = "Balance-Tag",
+                text = {
+                    "Während der nächsten Runde, gleiche",
+                    "{C:chips}Chips{} und {C:mult}Mult{} an",
+                    "bei der Berechnung von",
+                    "gespielten Händen"
+                }
+            },
+            tag_ad_defiance = {
+                name = "Trotz-Tag",
+                text = {
+                    "Verhindere ein {C:attention}Game Over",
+                    "einmal"
+                }
+            },
         },
         Tarot = {},
         Voucher = {}
@@ -395,6 +411,7 @@ return {
             ad_opened = "Geöffnet!",
             ad_deja_vu = "Déjà-vu",
             ad_doubled = "Verdoppelt!",
+            ad_defied = "Tod getrotzt",
         },
         high_scores = {},
         labels = {

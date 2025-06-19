@@ -370,6 +370,22 @@ return {
                     "{C:inactive}(Must have room)"
                 }
             },
+            tag_ad_balance = {
+                name = "Balance Tag",
+                text = {
+                    "During next round, balance",
+                    "{C:chips}Chips{} and {C:mult}Mult{} when",
+                    "calculating score for",
+                    "played hand"
+                }
+            },
+            tag_ad_defiance = {
+                name = "Defiance Tag",
+                text = {
+                    "Prevent {C:attention}game over",
+                    "one time"
+                }
+            },
         },
         Tarot = {},
         Voucher = {}
@@ -395,6 +411,7 @@ return {
             ad_opened = "Opened!",
             ad_deja_vu = "Déjà-vu",
             ad_doubled = "Doubled!",
+            ad_defied = "Death defied",
         },
         high_scores = {},
         labels = {
