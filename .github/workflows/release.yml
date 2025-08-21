@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -18,16 +19,26 @@ jobs:
       - name: Read version from AbsentDealer.json
         id: get_version
         run: |
+          set -e
+          cat AbsentDealer.json
           VERSION=$(jq -r .version AbsentDealer.json)
+          echo "Extracted version: $VERSION"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
 
       - name: Create ZIP archive with top-level folder
         run: |
+          set -e
           mkdir absentdealer
           shopt -s dotglob extglob
-          # Move all files/folders except .git, .github, and .gitignore
+          echo "Moving files into archive folder..."
           mv !(absentdealer|.git|.github|.gitignore) absentdealer/
+          ls -la absentdealer/
           zip -r absentdealer.zip absentdealer -x 'absentdealer.zip' -x 'absentdealer/.gitignore'
+          echo "Archive created:"
+          ls -lh absentdealer.zip
+        shell: bash
+
 
       - name: Generate tag name
         run: echo "RELEASE_TAG=v${{ steps.get_version.outputs.version }}" >> $GITHUB_ENV
