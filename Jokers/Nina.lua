@@ -16,10 +16,11 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, center)
         info_queue[#info_queue+1] = G.P_CENTERS.m_stone
         info_queue[#info_queue+1] = ad_megamarine_credit
+        local numerator, denominator = SMODS.get_probability_vars(center, 1, center.ability.extra.odds, "ad_nina")
         return {
             vars = {
-                G.GAME and G.GAME.probabilities.normal or 1,
-                center.ability.extra.odds,
+                numerator,
+                denominator,
                 center.ability.extra.money
             }
         }
@@ -31,7 +32,7 @@ SMODS.Joker {
         end
         local destroying_card = context.destroying_card
         if destroying_card and SMODS.has_enhancement(destroying_card, 'm_stone') and not AUtils.debuffed(destroying_card, nil) then
-            if AUtils.calculate_odds("ad_nina", card.ability.extra.odds) then
+            if AUtils.calculate_odds(card, "ad_nina", card.ability.extra.odds) then
                 return {
                     remove = true,
                     dollars = card.ability.extra.money,

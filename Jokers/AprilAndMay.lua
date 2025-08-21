@@ -17,10 +17,11 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, center)
         info_queue[#info_queue+1] = enhancement
         info_queue[#info_queue+1] = ad_megamarine_credit
+        local numerator, denominator = SMODS.get_probability_vars(center, 1, center.ability.extra.odds, "ad_april_and_may")
         return {
             vars = {
-                G.GAME and G.GAME.probabilities.normal or 1,
-                center.ability.extra.odds,
+                numerator,
+                denominator,
                 center.ability.extra.x_mult
             }
         }
@@ -46,7 +47,7 @@ SMODS.Joker {
         if context.cardarea == G.jokers and context.before then
             local matching_cards = {}
             for _, scoring_card in ipairs(context.scoring_hand) do
-                if scoring_card:is_suit(suit, nil, nil) and AUtils.calculate_odds("ad_april_and_may", card.ability.extra.odds) then
+                if scoring_card:is_suit(suit, nil, nil) and AUtils.calculate_odds(card, "ad_april_and_may", card.ability.extra.odds) then
                     matching_cards[#matching_cards+1] = scoring_card
                     scoring_card:set_ability(G.P_CENTERS.m_mult, nil, true)
                     G.E_MANAGER:add_event(Event({

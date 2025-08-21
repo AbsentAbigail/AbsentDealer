@@ -245,7 +245,11 @@ return {
             },
             j_ad_patch = {
                 name = "Patch",
-                text = {"If first played {C:attention}poker hand{}", "doesn't beat Blind, upgrade", "its level"}
+                text = {
+                    "Upgrade level of first played",
+                    "{C:attention}poker hand{} by {C:attention}#1#{}",
+                    "Doubled if hand didn't beat the blind"
+                }
             },
             j_ad_kiki = {
                 name = "Kiki",
@@ -299,6 +303,21 @@ return {
                     "{C:legendary}additional card"
                 }
             },
+            j_ad_break_glass = {
+                name = "Break Glass in case of emergency",
+                text = {
+                    "When a {C:attention}glass card{} breaks",
+                    "a random card held in hand becomes glass"
+                }
+            },
+            j_ad_joyride = {
+                name = "Jetpack Joyride",
+                text = {
+                    "If played hand contains",
+                    "only a single card",
+                    "increase its rank by {C:attention}#1#"
+                }
+            }
         },
         Other = {
             ad_credit = {
@@ -388,7 +407,24 @@ return {
             },
         },
         Tarot = {},
-        Voucher = {}
+        Voucher = {
+            v_ad_long_kitty = {
+                name = "Long Kitty",
+                text = {
+                    "{X:mult,C:white}X#1#{} for each empty",
+                    "Joker slot",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{})"
+                }
+            },
+            v_ad_long_cat = {
+                name = "Long Cat",
+                text = {
+                    "{X:mult,C:white}X#1#{} for each",
+                    "redeemed Voucher",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{})"
+                }
+            }
+        }
     },
     misc = {
         achievement_descriptions = {},
@@ -412,6 +448,7 @@ return {
             ad_deja_vu = "Déjà-vu",
             ad_doubled = "Doubled!",
             ad_defied = "Death defied",
+            ad_joyride = "Boosted",
         },
         high_scores = {},
         labels = {

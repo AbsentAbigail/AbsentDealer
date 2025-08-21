@@ -1,6 +1,8 @@
 SMODS.current_mod.optional_features = {
     -- enable additional SMODS contexts that can be CPU intensive
-    cardareas = { discard = true }
+    cardareas = { discard = true },
+    quantum_enhancements = true
+
 }
 
 if SMODS.current_mod.config.debug_hotkey then
@@ -8,7 +10,7 @@ if SMODS.current_mod.config.debug_hotkey then
     SMODS.Keybind {
         key_pressed = "g",
         action = function()
-            add_tag(Tag('tag_ad_cracked_mirror'))
+            add_tag(Tag('tag_ad_defiance'))
         end
     }
 end
@@ -40,3 +42,6 @@ SMODS.load_file(path .. "Seals.lua")()
 
 -- Tags
 SMODS.load_file(path .. "Tags.lua")()
+
+-- Voucher
+SMODS.load_file(path .. "Vouchers.lua")()

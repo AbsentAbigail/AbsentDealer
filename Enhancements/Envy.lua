@@ -12,10 +12,11 @@ SMODS.Enhancement {
 
     loc_vars = function(self, info_queue, center)
         info_queue[#info_queue+1] = G.P_CENTERS.c_death
+        local numerator, denominator = SMODS.get_probability_vars(center, 1, center.ability.extra.odds, "ad_envy")
         return {
             vars = {
-                G.GAME and G.GAME.probabilities.normal or 1,
-                center.ability.extra.odds
+                numerator,
+                denominator
             }
         }
     end,
@@ -35,7 +36,7 @@ SMODS.Enhancement {
             return -- no space in consumable area
         end
 
-        if not AUtils.calculate_odds("ad_envy", card.ability.extra.odds) then
+        if not AUtils.calculate_odds(card, "ad_envy", card.ability.extra.odds) then
             return
         end
 

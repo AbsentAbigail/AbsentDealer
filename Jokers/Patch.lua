@@ -21,11 +21,10 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
         if context.after and G.GAME.current_round.hands_played == 0 then
-            if to_big(G.GAME.chips + (hand_chips * mult)) < to_big(G.GAME.blind.chips) then
-                return {
-                    level_up = card.ability.extra.level_up
-                }
-            end
+            local multiplier = to_big(G.GAME.chips + (hand_chips * mult)) < to_big(G.GAME.blind.chips) and 2 or 1
+            return {
+                level_up = card.ability.extra.level_up * multiplier
+            }
         end
     end,
     

@@ -7,6 +7,8 @@ local back_path = 'backs/'
 local hand_path = 'hands/'
 local seal_path = 'seals/'
 local tag_path = 'tags/'
+local voucher_path = 'vouchers/'
+
 
 function AUtils.joker(joker)
     SMODS.load_file(joker_path .. joker .. ".lua")()
@@ -36,6 +38,10 @@ function AUtils.tag(tag)
     SMODS.load_file(tag_path .. tag .. ".lua")()
 end
 
+function AUtils.voucher(voucher)
+    SMODS.load_file(voucher_path .. voucher .. ".lua")()
+end
+
 function AUtils.hand_level_colour(level)
     return to_big(level) == to_big(1)
         and G.C.UI.TEXT_DARK
@@ -52,8 +58,9 @@ function AUtils.localize_rank_from_id(id)
     return localize(ranks[id] or tostring(id), "ranks")
 end
 
-function AUtils.calculate_odds(seed, odds)
-	return pseudorandom(seed) < G.GAME.probabilities.normal / odds
+function AUtils.calculate_odds(card, seed, odds)
+    return SMODS.pseudorandom_probability(card, seed, 1, odds, seed)
+	-- return pseudorandom(seed) < G.GAME.probabilities.normal / odds
 end
 
 function AUtils.debuffed(card, source)

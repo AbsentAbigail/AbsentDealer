@@ -97,7 +97,7 @@ SMODS.Consumable {
 
     in_pool = function(self, args)
         for i, hand in ipairs(hands) do
-            if G.GAME.hands[hand].visible then
+            if SMODS.is_poker_hand_visible(hand) then
                 return true
             end
         end
