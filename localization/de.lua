@@ -246,7 +246,11 @@ return {
             },
             j_ad_patch = {
                 name = "Patch",
-                text = {"Wenn erste {C:attention}poker hand{} der Runde", "nicht gewinnt, verbessere", "ihr level"}
+                text = {
+                    "Verbessere level der ersten",
+                    "{C:attention}poker hand{} der Runde",
+                    "Verdoppelt wenn die Hand nicht gewonnen hat"
+                }
             },
             j_ad_kiki = {
                 name = "Kiki",
@@ -299,6 +303,22 @@ return {
                     "{C:legendary}weitere Karte auswählen"
                 }
             },
+            j_ad_break_glass = {
+                name = "Break Glass in case of emergency",
+                text = {
+                    "Wenn eine Glas Karte zerstört wird,",
+                    "verwandel eine zufällige Karte in Hand",
+                    "zu Glas"
+                }
+            },
+            j_ad_joyride = {
+                name = "Jetpack Joyride",
+                text = {
+                    "Wenn die gespielte Hand",
+                    "nur eine Karte hat",
+                    "erhöhe ihren Rang um {C:attention}#1#"
+                }
+            }
         },
         Other = {
             ad_credit = {
@@ -370,9 +390,42 @@ return {
                     "{C:inactive}(Muss Platz haben)"
                 }
             },
+            tag_ad_balance = {
+                name = "Balance-Tag",
+                text = {
+                    "Während der nächsten Runde, gleiche",
+                    "{C:chips}Chips{} und {C:mult}Mult{} an",
+                    "bei der Berechnung von",
+                    "gespielten Händen"
+                }
+            },
+            tag_ad_defiance = {
+                name = "Trotz-Tag",
+                text = {
+                    "Verhindere ein {C:attention}Game Over",
+                    "einmal"
+                }
+            },
         },
         Tarot = {},
-        Voucher = {}
+        Voucher = {
+            v_ad_long_kitty = {
+                name = "Long Kitty",
+                text = {
+                    "{X:mult,C:white}X#1#{} für jeden leeren",
+                    "Joker slot",
+                    "{C:inactive}(Momentan {X:mult,C:white}X#2#{})"
+                }
+            },
+            v_ad_long_cat = {
+                name = "Long Cat",
+                text = {
+                    "{X:mult,C:white}X#1#{} für jeden",
+                    "eingnelösten Voucher",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{})"
+                }
+            }
+        }
     },
     misc = {
         achievement_descriptions = {},
@@ -395,6 +448,8 @@ return {
             ad_opened = "Geöffnet!",
             ad_deja_vu = "Déjà-vu",
             ad_doubled = "Verdoppelt!",
+            ad_defied = "Tod getrotzt",
+            ad_joyride = "Boosted"
         },
         high_scores = {},
         labels = {

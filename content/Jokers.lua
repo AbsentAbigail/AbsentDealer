@@ -27,6 +27,7 @@ AUtils.joker("DysphoriaHoodie")
 AUtils.joker("Puppo")
 AUtils.joker("Roommates")
 AUtils.joker("Obsidian")
+AUtils.joker("Joyride")
 
 -- Rare Jokers
 AUtils.joker("Catcitten")
@@ -40,6 +41,7 @@ AUtils.joker("Elsta")
 AUtils.joker("ShadyBox")
 AUtils.joker("Patch")
 AUtils.joker("WitchHat")
+AUtils.joker("BreakGlass")
 
 -- Legendary Jokers
 AUtils.joker("Sherba")

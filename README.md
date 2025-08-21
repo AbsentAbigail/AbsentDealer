@@ -9,10 +9,15 @@ Requires [Steamodded](https://github.com/Steamodded/smods). See their installati
 Download absentdealer.zip from the [latest release](https://github.com/AbsentAbigail/AbsentDealer/releases), extract the contained folder, and place it inside of Balatros mods folder.
 
 ## Features
-- Over 30 Jokers
-- 3 new Decks
-- 1 Spectral Card
+- Over 40 Jokers
+- 4 decks
+- 2 spectral cards
 - 7 card enhancements
+- 1 seal
+- 4 skip tags
+- 2 hand types/planet cards
+- 2 vouchers
+- lots of silly and cuteness
 - Supported Languages
 	- English
 	- German
@@ -32,11 +37,13 @@ Decks:
 <img src="https://github.com/user-attachments/assets/a884495f-8c01-4cb3-8813-49a368feb555" alt="Royal Deck" width="600"/>
 <img src="https://github.com/user-attachments/assets/19ecdfae-362e-4fdc-a361-a37e9b44ae66" alt="Voucher Deck" width="600"/>
 <img src="https://github.com/user-attachments/assets/e8941280-96eb-4563-a98e-a0ccb11bd45d" alt="Big Deck" width="600"/>
+<img src="https://github.com/user-attachments/assets/be251f9b-b782-4b0d-ab8c-6ee7d744d6c5" alt="Sinners Deck" width="600"/>
 
 
-Sin Spectral Card:
 
-<img src="https://github.com/user-attachments/assets/e2d33caa-511f-4729-8dec-52e0451c8c7c" alt="Sin Spectral Card" width="400"/>
+Spectral Cards:
+
+<img src="https://github.com/user-attachments/assets/4937b6d3-233d-4ca8-875f-c1bc1029645e" alt="Spectral Cards" width="400"/>
 
 
 Enhancements:

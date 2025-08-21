@@ -13,10 +13,11 @@ SMODS.Joker {
     },
 
     loc_vars = function(self, info_queue, center)
+        local numerator, denominator = SMODS.get_probability_vars(center, 1, center.ability.extra.odds, "ad_hideandseek")
         return {
             vars = {
-                G.GAME and G.GAME.probabilities.normal or 1,
-                center.ability.extra.odds,
+                numerator,
+                denominator,
                 center.ability.extra.retrigger
             }
         }
@@ -51,7 +52,7 @@ local stay_flipped_ref = Blind.stay_flipped
 function Blind.stay_flipped(self, area, card)
     if area == G.hand then
         local _, hideandseek = next(SMODS.find_card('j_ad_hideandseek'))
-        if hideandseek and AUtils.calculate_odds('ad_hideandseek', hideandseek.ability.extra.odds) then
+        if hideandseek and AUtils.calculate_odds(hideandseek, 'ad_hideandseek', hideandseek.ability.extra.odds) then
             return true
         end
     end

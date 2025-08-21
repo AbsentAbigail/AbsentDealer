@@ -15,11 +15,12 @@ SMODS.Joker {
         info_queue[#info_queue+1] = G.P_CENTERS.e_foil
         info_queue[#info_queue+1] = G.P_CENTERS.e_holo
         info_queue[#info_queue+1] = G.P_CENTERS.e_polychrome
+        local numerator, denominator = SMODS.get_probability_vars(center, 1, center.ability.extra.odds, "ad_imagination")
         return {
             vars = {
                 localize(G.GAME.current_round.imagination_card.rank, "ranks"),
-                G.GAME and G.GAME.probabilities.normal or 1,
-                center.ability.extra.odds
+                numerator,
+                denominator
             }
         }
     end,
@@ -38,7 +39,7 @@ SMODS.Joker {
                 return
             end
 
-            if AUtils.calculate_odds("ad_imagination", card.ability.extra.odds) then
+            if AUtils.calculate_odds(card, "ad_imagination", card.ability.extra.odds) then
                 G.E_MANAGER:add_event(Event {
                     trigger = 'after',
                     delay = 0.4,

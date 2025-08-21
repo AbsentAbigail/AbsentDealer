@@ -15,10 +15,11 @@ SMODS.Joker {
     },
 
     loc_vars = function(self, info_queue, center)
+        local numerator, denominator = SMODS.get_probability_vars(center, 1, center.ability.extra.odds, "ad_boozle")
         return {
             vars = {
-                G.GAME and G.GAME.probabilities.normal or 1,
-                center.ability.extra.odds,
+                numerator,
+                denominator,
                 center.ability.extra.retriggers
             }
         }
@@ -31,7 +32,7 @@ SMODS.Joker {
                 return
             end
             
-            if not AUtils.calculate_odds('ad_boozle', card.ability.extra.odds) then
+            if not AUtils.calculate_odds(card, 'ad_boozle', card.ability.extra.odds) then
                 return
             end
 

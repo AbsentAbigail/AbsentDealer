@@ -30,7 +30,7 @@ SMODS.Joker {
                 G.E_MANAGER:add_event(Event({
                     func = function()
                         for _, joker in ipairs(jokers) do
-                            if not joker.ability.eternal then
+                            if not SMODS.is_eternal(joker, card) then
                                 joker:start_dissolve()
                             end
                         end

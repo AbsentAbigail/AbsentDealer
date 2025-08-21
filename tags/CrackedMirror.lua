@@ -37,6 +37,6 @@ SMODS.Tag {
 
         G.GAME.ad_halve_scoring = (G.GAME.ad_halve_scoring or 0) + 1
         tag.triggered = true
-        tag:yep(localize("ad_crack"), G.C.BLUE, success and activate or function() end)
+        tag:yep(localize("ad_crack"), G.C.BLUE, success and activate or function() return true end)
     end
 }
