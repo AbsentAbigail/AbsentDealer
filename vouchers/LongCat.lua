@@ -17,6 +17,9 @@ SMODS.Voucher {
     atlas = 'Vouchers',
     pos = {x = 0, y = 1},
     cost = 10,
+    requires = {
+        "v_ad_longkitty"
+    },
     config = {
         extra = {
             xmult = 1
