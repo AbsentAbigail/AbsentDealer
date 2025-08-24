@@ -24,7 +24,7 @@ SMODS.Joker {
             local draw = card.ability.extra.extra_draw
             draw = G.GAME.blind:get_type() == 'Boss' and draw * 2 or draw
             for i = 1, draw do
-                draw_card(G.deck,G.hand, i*100/draw,'up', true)
+                draw_card(G.deck, G.hand, i*100/draw,'up', true)
             end
         end
     end,
