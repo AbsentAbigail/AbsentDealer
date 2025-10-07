@@ -46,3 +46,12 @@ SMODS.Atlas {
     px = 71,
     py = 95
 }
+
+if CardSleeves then
+    SMODS.Atlas {
+        key = 'Sleeves',
+        path = 'Sleeves.png',
+        px = 73,
+        py = 95
+    }
+end

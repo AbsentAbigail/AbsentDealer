@@ -37,3 +37,35 @@ SMODS.Back {
         })
     end
 }
+
+if not CardSleeves then
+    return
+end
+
+CardSleeves.Sleeve {
+    key = "sinner",
+    atlas = "Sleeves",
+    pos = { x = 3, y = 0 },
+
+    config = { },
+    
+    loc_vars = function(self, info_queue, back)
+        return {
+            vars = {
+            }
+        }
+    end,
+   
+    apply = function(self, sleeve)
+        G.E_MANAGER:add_event(Event {
+            func = function()
+                for i, card in ipairs(G.playing_cards) do
+                    card:set_ability(G.P_CENTERS[get_sin()])
+                end
+                return true
+            end
+        })
+        
+        CardSleeves.Sleeve.apply(self, sleeve)
+    end
+}

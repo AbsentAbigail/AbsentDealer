@@ -35,6 +35,41 @@ return {
                 }
             }
         },
+        Sleeve = {
+            sleeve_ad_royal = {
+                name = "Royal Sleeve",
+                text = {
+                    "{C:attention}#1#{} hand size",
+                    "Start run with only",
+                    "cards ranked",
+                    "{C:attention}10 or higher"
+                }
+            },
+            sleeve_ad_voucher = {
+                name = "Voucher Sleeve",
+                text = {
+                    "After defeating each",
+                    "{C:attention}Boss Blind{}, gain a",
+                    "{C:attention,T:tag_voucher}#1#",
+                }
+            },
+            sleeve_ad_big = {
+                name = "Big Sleeve",
+                text = {
+                    "{C:attention}+#1#{} Joker slot",
+                    "",
+                    "Start run with double",
+                    "numbered cards"
+                }
+            },
+            sleeve_ad_sinner = {
+                name = "Sinner's Sleeve",
+                text = {
+                    "Start run with all cards",
+                    "having random sin enhancements"
+                }
+            }
+        },
         Blind = {},
         Edition = {},
         Enhanced = {

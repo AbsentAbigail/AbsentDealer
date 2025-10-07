@@ -31,3 +31,39 @@ SMODS.Back {
         })
     end
 }
+
+if not CardSleeves then
+    return
+end
+
+CardSleeves.Sleeve {
+    key = "royal",
+    atlas = "Sleeves",
+    pos = { x = 2, y = 0 },
+
+    config = { hand_size = -2 },
+    
+    loc_vars = function(self, info_queue, back)
+        return {
+            vars = {
+                self.config.hand_size
+            }
+        }
+    end,
+   
+    apply = function(self, sleeve)
+        G.E_MANAGER:add_event(Event {
+            func = function()
+                for i = #G.playing_cards, 1, -1 do
+                    local card = G.playing_cards[i]
+                    if not AUtils.contains(ranks, card:get_id()) then
+                        card:remove()
+                    end
+                end
+                return true
+            end
+        })
+        
+        CardSleeves.Sleeve.apply(self, sleeve)
+    end
+}
