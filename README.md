@@ -22,6 +22,7 @@ Download absentdealer.zip from the [latest release](https://github.com/AbsentAbi
 	- English
 	- German
 - Support for [JokerDisplay](https://github.com/nh6574/JokerDisplay)
+- Support for [CardSleeves](https://github.com/larswijn/CardSleeves)
 
 
 ## Screenshots
