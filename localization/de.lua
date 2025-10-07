@@ -36,6 +36,42 @@ return {
                 }
             }
         },
+        Sleeve = {
+            sleeve_ad_royal = {
+                name = "Königliche Hülle",
+                text = {
+                    "{C:attention}#1#{} Handgröße",
+                    "Beginne den Durchlauf mit",
+                    "nur Karten mit Rang",
+                    "{C:attention}10 oder höher"
+                }
+            },
+            sleeve_ad_voucher = {
+                name = "Gutschein Hülle",
+                text = {
+                    "Erhalte nach dem Besiegen jedes",
+                    "{C:attention}Boss Blinds{}",
+                    "einen {C:attention,T:tag_voucher}#1#{}",
+                }
+            },
+            sleeve_ad_big = {
+                name = "Dicke Hülle",
+                text = {
+                    "{C:attention}+#1#{} Joker-Slot",
+                    "",
+                    "Beginne den Durchlauf mit",
+                    "zweimal so vielen Zahlenkarte"
+                }
+            },
+            sleeve_ad_sinner = {
+                name = "Hülle des Sünders",
+                text = {
+                    "Beginne den Durchlauf mit",
+                    "zufälligen {C:attention}Sünden verbesserungen",
+                    "auf allen Karten"
+                }
+            }
+        },
         Blind = {},
         Edition = {},
         Enhanced = {
