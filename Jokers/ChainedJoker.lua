@@ -21,6 +21,10 @@ SMODS.Joker {
         }
     end,
 
+    set_ability = function(self, card, initial, delay_sprites)
+        card:set_eternal(true)
+    end,
+
     calculate = function(self, card, context)
         if context.joker_main then
             return {
@@ -42,12 +46,3 @@ SMODS.Joker {
         }
     end
 }
-
-local create_card_ref = create_card
-function create_card(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
-	local ret = create_card_ref(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
-	if ret.config.center_key == "j_ad_chained_joker" then
-        ret:set_eternal(true)
-    end
-	return ret
-end
